@@ -405,7 +405,7 @@ PrefabInstance:
     - target: {fileID: 2941397246114763820, guid: 282ef4c1df165dc4eb41bce500a5155d, type: 3}
       propertyPath: m_text
       value: "Asmod\xE9e Bellanie\n\xC9tienne \"Ethel\" M\xE9nard\nMassimo \"Doubledevelo\"
-        LJ\nNiyah\nTitus \"Cloaked_One\" Greenawalt\nZara Clark"
+        LJ\nNiyah / Scyriate\nTitus \"Cloaked_One\" Greenawalt\nZara Clark"
       objectReference: {fileID: 0}
     - target: {fileID: 2941397246114763820, guid: 282ef4c1df165dc4eb41bce500a5155d, type: 3}
       propertyPath: m_fontSize
