@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] Animator player;
     private Rigidbody2D rb;
     public float speed = 10;
     [SerializeField] GameObject safeZone;
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        //player = gameObject.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -46,7 +48,37 @@ public class PlayerController : MonoBehaviour
             sanity.ToggleSafe();
         }
     }
+    void AnimRight()
+    {
+        player.SetBool("face_Right", true);
+        player.SetBool("face_Left", !true);
+        player.SetBool("face_Back", !true);
+        player.SetBool("face_Front", !true);
+    }
 
+    void AnimLeft()
+    {
+        player.SetBool("face_Right", !true);
+        player.SetBool("face_Left", true);
+        player.SetBool("face_Back", !true);
+        player.SetBool("face_Front", !true);
+    }
+
+    void AnimFront()
+    {
+        player.SetBool("face_Right", !true);
+        player.SetBool("face_Left", !true);
+        player.SetBool("face_Back", !true);
+        player.SetBool("face_Front", true);
+    }
+
+    void AnimBack()
+    {
+        player.SetBool("face_Right", !true);
+        player.SetBool("face_Left", !true);
+        player.SetBool("face_Back", true);
+        player.SetBool("face_Front", !true);
+    }
     private void FixedUpdate()
     {
         if (!sanity.isDead)
@@ -74,20 +106,24 @@ public class PlayerController : MonoBehaviour
             else if (Input.GetKey("d"))
             {
                 rb.velocity = new Vector2(speed, 0);
+                AnimRight();
                 //transform.localScale = new Vector2(1, 1);
             }
             else if (Input.GetKey("a"))
             {
                 rb.velocity = new Vector2(-speed, 0);
+                AnimLeft();
                 //transform.localScale = new Vector2(-1, 1);
             }
             else if (Input.GetKey("w"))
             {
                 rb.velocity = new Vector2(0, speed);
+                AnimBack();
             }
             else if (Input.GetKey("s"))
             {
                 rb.velocity = new Vector2(0, -speed);
+                AnimFront();
             }
             else
             {

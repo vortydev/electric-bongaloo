@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3399680251020392317}
   - component: {fileID: 3399680251020392318}
+  - component: {fileID: 3779371976012994727}
   - component: {fileID: 3399680251020392319}
   - component: {fileID: 3399680251020392307}
   - component: {fileID: 3399680251020392316}
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 6bd9fbaeed3cfda4e8651064e7be53b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 177be582320731b46b0155d5d47a44b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,6 +86,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3779371976012994727
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3399680251020392312}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d364cf2174b97a24c9ccc3212fdf61cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &3399680251020392319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,10 +117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5992e06c76524be49a2b701e7c7f5075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  sanity: 1
+  speed: 10
   safeZone: {fileID: 0}
-  sanityMeter: {fileID: 0}
+  sanity: {fileID: 0}
 --- !u!50 &3399680251020392307
 Rigidbody2D:
   serializedVersion: 4
@@ -135,6 +154,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0114527345}
-  m_Size: {x: 0.6, y: 0.8229056}
+  m_Offset: {x: -0.009392142, y: -0.04677844}
+  m_Size: {x: 0.6187843, y: 0.939368}
   m_Direction: 0
