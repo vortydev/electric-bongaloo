@@ -13,6 +13,7 @@ public class Sanity : MonoBehaviour
     public float maxSanity = 100f;
     public bool isDead = false;
     public bool isSafe = true;
+    public bool isDim = false;
 
     private void Start()
     {
@@ -35,9 +36,8 @@ public class Sanity : MonoBehaviour
         {
             LoseSanity(0.05f);
         }
-        else
+        else if (!isDim)
         {
-
             GainSanity(1.0f);
         }
     }

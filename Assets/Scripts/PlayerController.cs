@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 10;
-    [SerializeField] float sanity = 1;
+    private Rigidbody2D rb;
+    public float speed = 10;
     [SerializeField] GameObject safeZone;
-    [SerializeField] Sanity sanityMeter;
+    [SerializeField] Sanity sanity;
 
 
     private void Start()
     {
-    
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public void PlayerUse()
@@ -23,10 +23,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D trigger)
     {
-        Debug.Log(trigger.gameObject.tag);
         if (trigger.gameObject.tag == "Safe")
         {            
-            sanityMeter.ToggleSafe();
+            sanity.ToggleSafe();
         }
     }
 
@@ -34,21 +33,66 @@ public class PlayerController : MonoBehaviour
     {
         if (trigger.gameObject.tag == "Safe")
         {
-            sanityMeter.ToggleSafe();
+            sanity.ToggleSafe();
         }
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        if (Input.GetButtonDown("Fire1")) 
-        { 
-            PlayerUse();
+        if (!sanity.isDead)
+        {
+            if (Input.GetKey("d") && Input.GetKey("w"))
+            {
+                rb.velocity = new Vector2(speed, speed).normalized * speed;
+            }
+            else if (Input.GetKey("d") && Input.GetKey("s"))
+            {
+                rb.velocity = new Vector2(speed, -speed).normalized * speed;
+            }
+            else if (Input.GetKey("a") && Input.GetKey("w"))
+            {
+                rb.velocity = new Vector2(-speed, speed).normalized * speed;
+            }
+            else if (Input.GetKey("a") && Input.GetKey("s"))
+            {
+                rb.velocity = new Vector2(-speed, -speed).normalized * speed;
+            }
+            else if (Input.GetKey("d"))
+            {
+                rb.velocity = new Vector2(speed, 0);
+                //transform.localScale = new Vector2(1, 1);
+            }
+            else if (Input.GetKey("a"))
+            {
+                rb.velocity = new Vector2(-speed, 0);
+                //transform.localScale = new Vector2(-1, 1);
+            }
+            else if (Input.GetKey("w"))
+            {
+                rb.velocity = new Vector2(0, speed);
+            }
+            else if (Input.GetKey("s"))
+            {
+                rb.velocity = new Vector2(0, -speed);
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, 0);
+            }
         }
-
-        gameObject.transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * moveSpeed* Time.deltaTime);
-        
     }
+
+    //void Update()
+    //{
+    //    float horizontalInput = Input.GetAxis("Horizontal");
+    //    float verticalInput = Input.GetAxis("Vertical");
+
+    //    if (Input.GetButtonDown("Fire1")) 
+    //    { 
+    //        PlayerUse();
+    //    }
+
+    //    gameObject.transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * speed* Time.deltaTime);
+        
+    //}
 }
