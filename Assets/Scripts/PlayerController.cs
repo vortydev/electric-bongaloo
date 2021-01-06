@@ -21,6 +21,16 @@ public class PlayerController : MonoBehaviour
         //not yet implemented
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<Enemy>() != null)
+        {
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            sanity.LoseSanity(enemy.GetDmg());
+            enemy.Die();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D trigger)
     {
         if (trigger.gameObject.tag == "Safe")
@@ -41,6 +51,10 @@ public class PlayerController : MonoBehaviour
     {
         if (!sanity.isDead)
         {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                PlayerUse();
+            }
             if (Input.GetKey("d") && Input.GetKey("w"))
             {
                 rb.velocity = new Vector2(speed, speed).normalized * speed;
