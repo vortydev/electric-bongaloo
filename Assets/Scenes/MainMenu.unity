@@ -725,6 +725,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7963543556776638655, guid: 00b0e949913c4f2459408885320a80ab, type: 3}
+      propertyPath: m_text
+      value: Dream Walker
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963543556776638655, guid: 00b0e949913c4f2459408885320a80ab, type: 3}
+      propertyPath: m_fontSize
+      value: 166.9
+      objectReference: {fileID: 0}
     - target: {fileID: 7963543556829829215, guid: 00b0e949913c4f2459408885320a80ab, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
