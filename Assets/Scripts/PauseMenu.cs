@@ -22,9 +22,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenu = GetComponentInChildren<Image>();
         pauseMenu.gameObject.SetActive(false);
 
-        // loads audio controller
-        // audioController = GetComponent<AudioController>();
-
         // load sliders
         musicSlider.SetValueWithoutNotify(audioController.music);
         sfxSlider.SetValueWithoutNotify(audioController.sfx);
