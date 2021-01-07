@@ -9,6 +9,11 @@ public class PlayerController : MonoBehaviour
     public float speed = 10;
     public bool isPaused = false;
     [SerializeField] Sanity sanity;
+    [SerializeField] SpriteRenderer BigDarkSprite;
+    [SerializeField] SpriteRenderer SmallDarkSprite;
+
+    float bigDarkTransparent;
+    float smallDarkTransparent;
 
 
     private void Start()
@@ -21,6 +26,28 @@ public class PlayerController : MonoBehaviour
         Debug.Log("button pressed");
         //not yet implemented
     }
+
+    void SetBigDSpriteTrans(float transparency)
+    {
+        BigDarkSprite.color = new Color (BigDarkSprite.color.r, BigDarkSprite.color.g, BigDarkSprite.color.b, transparency);
+    }
+
+    void SetSmallDSpriteTrans(float transparency)
+    {
+        SmallDarkSprite.color = new Color(SmallDarkSprite.color.r, SmallDarkSprite.color.g, SmallDarkSprite.color.b, transparency);
+    }
+
+    private void updateLighting()
+    {
+        float mySanity = sanity.SanityCheck();
+
+        bigDarkTransparent = (135 - mySanity) * .01f;
+        smallDarkTransparent = ((115 - mySanity) / 1.4f) * 0.01f;
+
+        SetBigDSpriteTrans(bigDarkTransparent);
+        SetSmallDSpriteTrans(smallDarkTransparent);
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -78,8 +105,11 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("face_Back", true);
         animator.SetBool("face_Front", !true);
     }
+
     private void FixedUpdate()
     {
+        updateLighting();
+
         if (!sanity.isDead && !isPaused)
         {
             if (Input.GetButtonDown("Fire1"))

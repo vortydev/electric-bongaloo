@@ -44,6 +44,11 @@ public class Sanity : MonoBehaviour
         }
     }
 
+    public float SanityCheck()
+    {
+        return sanity;
+    }
+
     private void UpdateSanityBar()
     {
         float ratio = sanity / maxSanity;
