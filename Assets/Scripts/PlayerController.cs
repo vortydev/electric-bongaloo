@@ -139,6 +139,7 @@ public class PlayerController : MonoBehaviour
             {
                 PlayerUse();
             }
+
             if (Input.GetKey("d") && Input.GetKey("w"))
             {
                 rb.velocity = new Vector2(speed, speed).normalized * speed;
