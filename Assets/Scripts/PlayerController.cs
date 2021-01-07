@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] Animator player;
+    [SerializeField] Animator animator;
     private Rigidbody2D rb;
     public float speed = 10;
-    [SerializeField] GameObject safeZone;
     [SerializeField] Sanity sanity;
 
 
     private void Start()
     {
-        //player = gameObject.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -50,34 +48,34 @@ public class PlayerController : MonoBehaviour
     }
     void AnimRight()
     {
-        player.SetBool("face_Right", true);
-        player.SetBool("face_Left", !true);
-        player.SetBool("face_Back", !true);
-        player.SetBool("face_Front", !true);
+        animator.SetBool("face_Right", true);
+        animator.SetBool("face_Left", !true);
+        animator.SetBool("face_Back", !true);
+        animator.SetBool("face_Front", !true);
     }
 
     void AnimLeft()
     {
-        player.SetBool("face_Right", !true);
-        player.SetBool("face_Left", true);
-        player.SetBool("face_Back", !true);
-        player.SetBool("face_Front", !true);
+        animator.SetBool("face_Right", !true);
+        animator.SetBool("face_Left", true);
+        animator.SetBool("face_Back", !true);
+        animator.SetBool("face_Front", !true);
     }
 
     void AnimFront()
     {
-        player.SetBool("face_Right", !true);
-        player.SetBool("face_Left", !true);
-        player.SetBool("face_Back", !true);
-        player.SetBool("face_Front", true);
+        animator.SetBool("face_Right", !true);
+        animator.SetBool("face_Left", !true);
+        animator.SetBool("face_Back", !true);
+        animator.SetBool("face_Front", true);
     }
 
     void AnimBack()
     {
-        player.SetBool("face_Right", !true);
-        player.SetBool("face_Left", !true);
-        player.SetBool("face_Back", true);
-        player.SetBool("face_Front", !true);
+        animator.SetBool("face_Right", !true);
+        animator.SetBool("face_Left", !true);
+        animator.SetBool("face_Back", true);
+        animator.SetBool("face_Front", !true);
     }
     private void FixedUpdate()
     {
