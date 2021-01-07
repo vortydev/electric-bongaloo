@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Sanity : MonoBehaviour
 {
     private Image sanityBar;
+    [SerializeField] GameDoots soundtracks;
 
     Color regColor = new Color(0, 0.47f, 1);
     Color critColor = new Color(0.15f, 0, 0.20f);
@@ -49,12 +50,18 @@ public class Sanity : MonoBehaviour
         sanityBar.rectTransform.localScale = new Vector2(ratio, 1);
 
 
-        if (ratio <= 0.2f)
+        if (ratio <= 0.35f)
         {
-            sanityBar.CrossFadeColor(critColor, 2.5f, true, false);
+            sanityBar.CrossFadeColor(critColor, 0.5f, true, false);
+
+            soundtracks.layer2 = true;
         }
         else
+        {
             sanityBar.CrossFadeColor(regColor, 0.5f, true, false);
+
+            soundtracks.layer2 = false;
+        }
     }
 
     public void LoseSanity(float damage)
