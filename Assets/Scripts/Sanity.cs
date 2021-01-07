@@ -7,7 +7,8 @@ public class Sanity : MonoBehaviour
 {
     private Image sanityBar;
 
-    Color regColor = new Color(0.7f, 0.7f, 0.7f, 1);
+    Color regColor = new Color(0, 0.47f, 1);
+    Color critColor = new Color(0.15f, 0, 0.20f);
 
     public float sanity = 100f;
     public float maxSanity = 100f;
@@ -50,7 +51,7 @@ public class Sanity : MonoBehaviour
 
         if (ratio <= 0.2f)
         {
-            sanityBar.CrossFadeColor(Color.red, 2.5f, true, false);
+            sanityBar.CrossFadeColor(critColor, 2.5f, true, false);
         }
         else
             sanityBar.CrossFadeColor(regColor, 0.5f, true, false);
