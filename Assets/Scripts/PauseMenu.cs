@@ -38,26 +38,9 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pauseMenu.IsActive())
-            {
-                gameDoots.PlayPauseSound();
-
-                player.isPaused = false;
-
-                pauseMenu.gameObject.SetActive(false);
-                sanityBar.gameObject.SetActive(true);
-            }
+                OnUnpauseMenu();
             else
-            {
-                gameDoots.PlayPauseSound();
-
-                player.isPaused = true;
-
-                musicSlider.SetValueWithoutNotify(audioController.music);
-                sfxSlider.SetValueWithoutNotify(audioController.sfx);
-
-                pauseMenu.gameObject.SetActive(true);
-                sanityBar.gameObject.SetActive(false);
-            }
+                OnPauseMenu();
         }
 
         audioController.UpdateMusic(musicSlider.value);
@@ -68,21 +51,38 @@ public class PauseMenu : MonoBehaviour
         sfxVal.text = sfxSlider.value.ToString();
     }
 
+    private void OnPauseMenu()
+    {
+        gameDoots.PlayPauseSound();
+
+        player.isPaused = true;
+
+        musicSlider.SetValueWithoutNotify(audioController.music);
+        sfxSlider.SetValueWithoutNotify(audioController.sfx);
+
+        pauseMenu.gameObject.SetActive(true);
+        sanityBar.gameObject.SetActive(false);
+    }
+
+    private void OnUnpauseMenu()
+    {
+        gameDoots.PlayUnpauseSound();
+
+        player.isPaused = false;
+
+        pauseMenu.gameObject.SetActive(false);
+        sanityBar.gameObject.SetActive(true);
+    }
+
+    public void ClickResume()
+    {
+        OnUnpauseMenu();
+    }
+
     // Loads scene #0, which is the main menu
     public void QuitToMainMenu()
     {
         audioController.SavePlayerPrefs();
         SceneManager.LoadScene(0);
-    }
-
-    public void TogglePauseMenu()
-    {
-        gameDoots.PlayPauseSound();
-
-        pauseMenu.gameObject.SetActive(!pauseMenu.IsActive());
-
-        player.isPaused = !player.isPaused;
-
-        sanityBar.gameObject.SetActive(!sanityBar.IsActive());
     }
 }

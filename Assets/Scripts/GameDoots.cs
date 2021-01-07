@@ -5,16 +5,16 @@ using UnityEngine;
 public class GameDoots : MonoBehaviour
 {
     private AudioController audioController;
+    [SerializeField] Sanity sanity;
 
     // music
     [SerializeField] AudioSource track1;
     [SerializeField] AudioSource track2;
-
-    public bool layer2 = false;
-    public bool layer3 = false;
+    [SerializeField] AudioSource track3;
 
     // sfx
-    [SerializeField] AudioSource pauseSound;
+    [SerializeField] AudioSource pause;
+    [SerializeField] AudioSource unpause;
 
     void Start()
     {
@@ -24,16 +24,19 @@ public class GameDoots : MonoBehaviour
     private void Update()
     {
         track1.volume = audioController.music / 10;
-
-        if (layer2)
-            track2.volume = audioController.music / 10;
-        else
-            track2.volume = 0;
+        track2.volume = (audioController.music / 10) * ((sanity.maxSanity - sanity.sanity) * 0.01f);
     }
 
     public void PlayPauseSound()
     {
-        pauseSound.volume = (audioController.sfx / 10) / 2;
-        pauseSound.Play();
+        pause.volume = (audioController.sfx / 10) / 2;
+        pause.Play();
+    }
+
+
+    public void PlayUnpauseSound() 
+    {
+        unpause.volume = (audioController.sfx / 10) / 2;
+        unpause.Play();
     }
 }
