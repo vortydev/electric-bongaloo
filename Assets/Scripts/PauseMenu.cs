@@ -8,23 +8,28 @@ using TMPro;
 public class PauseMenu : MonoBehaviour
 {
     private Image pauseMenu;
+    [SerializeField] Image sanityBar;
+
     [SerializeField] AudioController audioController;
+    [SerializeField] GameDoots gameDoots;
 
-    [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider sfxSlider;
+    // setting sliders
+    [SerializeField] Slider musicSlider;
+    [SerializeField] Slider sfxSlider;
 
-    [SerializeField] private TextMeshProUGUI musicVal;
-    [SerializeField] private TextMeshProUGUI sfxVal;
+    // slider values
+    [SerializeField] TextMeshProUGUI musicVal;
+    [SerializeField] TextMeshProUGUI sfxVal;
 
     public void Start()
     {
-        // loads the image component
-        pauseMenu = GetComponentInChildren<Image>();
-        pauseMenu.gameObject.SetActive(false);
-
-        // load sliders
+        // load slider settings
         musicSlider.SetValueWithoutNotify(audioController.music);
         sfxSlider.SetValueWithoutNotify(audioController.sfx);
+
+        pauseMenu = GetComponentInChildren<Image>();    // loads the component
+        pauseMenu.gameObject.SetActive(false);          // sets the menu to inactive
+
     }
 
     public void Update()
@@ -34,14 +39,20 @@ public class PauseMenu : MonoBehaviour
         {
             if (pauseMenu.IsActive())
             {
-               pauseMenu.gameObject.SetActive(false);
+                gameDoots.PlayPauseSound();
+
+                pauseMenu.gameObject.SetActive(false);
+                sanityBar.gameObject.SetActive(true);
             }
             else
             {
+                gameDoots.PlayPauseSound();
+
                 musicSlider.SetValueWithoutNotify(audioController.music);
                 sfxSlider.SetValueWithoutNotify(audioController.sfx);
 
                 pauseMenu.gameObject.SetActive(true);
+                sanityBar.gameObject.SetActive(false);
             }
         }
 
@@ -56,6 +67,16 @@ public class PauseMenu : MonoBehaviour
     // Loads scene #0, which is the main menu
     public void QuitToMainMenu()
     {
+        audioController.SavePlayerPrefs();
         SceneManager.LoadScene(0);
+    }
+
+    public void TogglePauseMenu()
+    {
+        gameDoots.PlayPauseSound();
+
+        pauseMenu.gameObject.SetActive(!pauseMenu.IsActive());
+
+        sanityBar.gameObject.SetActive(!sanityBar.IsActive());
     }
 }

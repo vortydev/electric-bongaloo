@@ -20,10 +20,6 @@ public class AudioController : MonoBehaviour
         if (music != m)
         {
             music = m;
-
-            // save settings
-            PlayerPrefs.SetFloat("music", m);
-            PlayerPrefs.Save();
         }
     }
 
@@ -32,10 +28,13 @@ public class AudioController : MonoBehaviour
         if (sfx != s)
         {
             sfx = s;
-
-            // save settings
-            PlayerPrefs.SetFloat("sfx", s);
-            PlayerPrefs.Save();
         }
+    }
+
+    public void SavePlayerPrefs()
+    {
+        PlayerPrefs.SetFloat("music", music);
+        PlayerPrefs.SetFloat("sfx", music);
+        PlayerPrefs.Save();
     }
 }
