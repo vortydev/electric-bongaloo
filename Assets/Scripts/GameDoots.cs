@@ -25,6 +25,7 @@ public class GameDoots : MonoBehaviour
     {
         track1.volume = audioController.music / 10;
         track2.volume = (audioController.music / 10) * ((sanity.maxSanity - sanity.sanity) * 0.01f);
+        track3.volume = (audioController.music / 10) * ((sanity.maxSanity - sanity.sanity) * 0.01f) - (1 - sanity.critThreshold);
     }
 
     public void PlayPauseSound()

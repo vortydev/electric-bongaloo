@@ -12,6 +12,8 @@ public class Sanity : MonoBehaviour
 
     public float sanity = 100f;
     public float maxSanity = 100f;
+    public float critThreshold = 0.2f;
+
     public bool isDead = false;
     public bool isSafe = true;
     public bool isDim = false;
@@ -55,7 +57,7 @@ public class Sanity : MonoBehaviour
 
         UpdateSanityBody();
 
-        if (ratio <= 0.20f)
+        if (ratio <= critThreshold)
         {
             sanityBar.CrossFadeColor(Color.red, 5f, true, false);
         }
