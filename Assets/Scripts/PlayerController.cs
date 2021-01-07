@@ -7,8 +7,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator animator;
     private Rigidbody2D rb;
     public float speed = 10;
+    float waitTime = 5f;
     public bool isPaused = false;
+    bool respawning = false;
     [SerializeField] Sanity sanity;
+    [SerializeField] GameObject respawnPoint;
     [SerializeField] SpriteRenderer BigDarkSprite;
     [SerializeField] SpriteRenderer SmallDarkSprite;
 
@@ -27,6 +30,24 @@ public class PlayerController : MonoBehaviour
         //not yet implemented
     }
 
+    void StartRespawn()
+    {
+        
+        if (respawning==false)
+        {
+            respawning = true;
+            StartCoroutine(RespawnDelay(waitTime));            
+        }
+    }
+
+    IEnumerator RespawnDelay(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        gameObject.transform.position = respawnPoint.transform.position;
+        sanity.isDead = false;
+        respawning = false;
+    }
+
     void SetBigDSpriteTrans(float transparency)
     {
         BigDarkSprite.color = new Color (BigDarkSprite.color.r, BigDarkSprite.color.g, BigDarkSprite.color.b, transparency);
@@ -36,6 +57,8 @@ public class PlayerController : MonoBehaviour
     {
         SmallDarkSprite.color = new Color(SmallDarkSprite.color.r, SmallDarkSprite.color.g, SmallDarkSprite.color.b, transparency);
     }
+
+
 
     private void updateLighting()
     {
@@ -106,7 +129,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("face_Front", !true);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         updateLighting();
 
@@ -161,6 +184,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            StartRespawn();
             rb.velocity = new Vector2(0, 0);
         }
     }
