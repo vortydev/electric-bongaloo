@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator animator;
     private Rigidbody2D rb;
     public float speed = 10;
+    public bool isPaused = false;
     [SerializeField] Sanity sanity;
 
 
@@ -79,7 +80,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!sanity.isDead)
+        if (!sanity.isDead && !isPaused)
         {
             if (Input.GetButtonDown("Fire1"))
             {
@@ -128,19 +129,9 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(0, 0);
             }
         }
+        else
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
     }
-
-    //void Update()
-    //{
-    //    float horizontalInput = Input.GetAxis("Horizontal");
-    //    float verticalInput = Input.GetAxis("Vertical");
-
-    //    if (Input.GetButtonDown("Fire1")) 
-    //    { 
-    //        PlayerUse();
-    //    }
-
-    //    gameObject.transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * speed* Time.deltaTime);
-        
-    //}
 }

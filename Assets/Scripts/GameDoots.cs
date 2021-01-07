@@ -8,6 +8,7 @@ public class GameDoots : MonoBehaviour
 
     // music
     [SerializeField] AudioSource track1;
+    [SerializeField] AudioSource track2;
 
     // sfx
     [SerializeField] AudioSource pauseSound;
@@ -15,6 +16,11 @@ public class GameDoots : MonoBehaviour
     void Start()
     {
         audioController = GetComponent<AudioController>();
+    }
+
+    private void Update()
+    {
+        track1.volume = audioController.music / 10;
     }
 
     public void PlayPauseSound()

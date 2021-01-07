@@ -8,6 +8,7 @@ using TMPro;
 public class PauseMenu : MonoBehaviour
 {
     private Image pauseMenu;
+    [SerializeField] PlayerController player;
     [SerializeField] Image sanityBar;
 
     [SerializeField] AudioController audioController;
@@ -29,7 +30,6 @@ public class PauseMenu : MonoBehaviour
 
         pauseMenu = GetComponentInChildren<Image>();    // loads the component
         pauseMenu.gameObject.SetActive(false);          // sets the menu to inactive
-
     }
 
     public void Update()
@@ -41,12 +41,16 @@ public class PauseMenu : MonoBehaviour
             {
                 gameDoots.PlayPauseSound();
 
+                player.isPaused = false;
+
                 pauseMenu.gameObject.SetActive(false);
                 sanityBar.gameObject.SetActive(true);
             }
             else
             {
                 gameDoots.PlayPauseSound();
+
+                player.isPaused = true;
 
                 musicSlider.SetValueWithoutNotify(audioController.music);
                 sfxSlider.SetValueWithoutNotify(audioController.sfx);
@@ -76,6 +80,8 @@ public class PauseMenu : MonoBehaviour
         gameDoots.PlayPauseSound();
 
         pauseMenu.gameObject.SetActive(!pauseMenu.IsActive());
+
+        player.isPaused = !player.isPaused;
 
         sanityBar.gameObject.SetActive(!sanityBar.IsActive());
     }
