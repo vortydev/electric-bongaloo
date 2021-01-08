@@ -1719,9 +1719,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2941397246114763820, guid: d727efcf67c5bfa469901c921f701a72, type: 3}
       propertyPath: m_text
-      value: "Sonia \"Asmod\xE9e Bellamie\" Dedourge\n\xC9tienne \"Ethel\" M\xE9nard\nJeanne
-        Faguy\nMassimo \"Doubledevelo\" LJ\nNiyah / Scyriate\nTitus \"Cloaked_One\"
-        Greenawalt\nZara Clark"
+      value: "Sonia \"Asmod\xE9e Bellamie\" Dedourge\n\xC9tienne \"Ethel\" M\xE9nard\nMassimo
+        \"Doubledevelo\" LJ\nNiyah / Scyriate\nTitus \"Cloaked_One\" Greenawalt\nZara
+        Clark"
       objectReference: {fileID: 0}
     - target: {fileID: 2941397246114763820, guid: d727efcf67c5bfa469901c921f701a72, type: 3}
       propertyPath: m_fontSize

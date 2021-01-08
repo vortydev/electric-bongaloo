@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5022966955712419326}
-  - component: {fileID: 3749599583204556061}
+  - component: {fileID: 7256687381152271117}
   - component: {fileID: 741769655401726784}
   - component: {fileID: 3536069770684220242}
   m_Layer: 0
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3749599583204556061
+--- !u!114 &7256687381152271117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,11 +42,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 336962154343390356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c12baf3865deef488e4d9ccde20d571, type: 3}
+  m_Script: {fileID: 11500000, guid: 5abb72cda809dc24a8838c336e5768f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   puzzle: 0
   id: 0
+  pipeType: 2
   initPos: 0
   curPos: 0
   correctPos: 0

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Pipe : MonoBehaviour
 {
-    public int puzzle;      // puzzle the pipe belongs to
+    [SerializeField] Puzzle puzzle;  // puzzle the pipe belongs to
+
     public int id;          // id of the pipe
+    public int pipeType;    // type of pipe (1: corner and tee, 2: straight)
 
     public int initPos;     // initial pipe position
     public int curPos;      // current pipe position
@@ -19,7 +21,6 @@ public class Pipe : MonoBehaviour
         ShuffleInitPos();       // sets initial position
         curPos = initPos;       // sets current position
         UpdatePipeRotation();   // updates the gameobjects rotation
-        CheckCorrectPos();      // checks if the initial position is correct
     }
 
     private void Update()
@@ -31,18 +32,44 @@ public class Pipe : MonoBehaviour
 
     public void ShuffleInitPos()
     {
-        initPos = Random.Range(1, 5);
+        switch (pipeType)
+        {
+            case 1:
+                initPos = Random.Range(1, 5);
+                break;
+
+            case 2:
+                initPos = Random.Range(1, 3);
+                break;
+        }
+    }
+
+    public void ShuffleCurPos()
+    {
+        switch (pipeType)
+        {
+            case 1:
+                curPos = Random.Range(1, 5);
+                break;
+
+            case 2:
+                curPos = Random.Range(1, 5);
+                break;
+        }
+
+        UpdatePipeRotation();
     }
 
     public void RotatePipe()
     {
         curPos++;   // increments the pipe's rotation
 
-        if (curPos > 4) // reset to 1 the pipe's position
+        if (pipeType == 1 && curPos > 4) // reset to 1 the pipe's position
+            curPos = 1;
+        else if (pipeType == 2 && curPos > 2)
             curPos = 1;
 
         UpdatePipeRotation();   // updates the gameobject's rotation
-        CheckCorrectPos();      // checks if the current postion is correct
     }
 
     private void UpdatePipeRotation()
@@ -65,6 +92,8 @@ public class Pipe : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 0, 270);
                 break;
         }
+
+        CheckCorrectPos();      // checks if the current postion is correct
     }
 
     private void CheckCorrectPos()
@@ -73,6 +102,8 @@ public class Pipe : MonoBehaviour
             isGucci = true;
         else
             isGucci = false;
+
+        puzzle.CheckPuzzleCompletion();
     }
 
     private void OnTriggerEnter2D(Collider2D trigger)

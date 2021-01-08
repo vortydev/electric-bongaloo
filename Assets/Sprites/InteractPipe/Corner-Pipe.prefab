@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzle: 0
   id: 0
+  pipeType: 1
   initPos: 0
   curPos: 0
   correctPos: 0
