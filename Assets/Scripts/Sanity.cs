@@ -35,11 +35,11 @@ public class Sanity : MonoBehaviour
             Debug.Log("Dead."); // temp
         }
 
-        if (!isSafe)
+        if (!isSafe && !isDim)
         {
             LoseSanity(0.05f);
         }
-        else if (!isDim)
+        else if (isSafe)
         {
             GainSanity(1.0f);
         }
@@ -148,5 +148,10 @@ public class Sanity : MonoBehaviour
     public void ToggleSafe()
     {
         isSafe = !isSafe;
+    }
+
+    public void ToggleDim()
+    {
+        isDim = !isDim;
     }
 }
