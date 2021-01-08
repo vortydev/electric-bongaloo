@@ -24,12 +24,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void PlayerUse()
-    {
-        Debug.Log("button pressed");
-        //not yet implemented
-    }
-
     void StartRespawn()
     {
         
@@ -97,6 +91,23 @@ public class PlayerController : MonoBehaviour
             sanity.ToggleSafe();
         }
     }
+
+    public void PlayerUse()
+    {
+        Debug.Log("button pressed");
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Light_Box>() != null)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                PlayerUse();
+            }
+        }
+    }
+
     void AnimRight()
     {
         animator.SetBool("face_Right", true);
@@ -135,11 +146,6 @@ public class PlayerController : MonoBehaviour
 
         if (!sanity.isDead && !isPaused)
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                PlayerUse();
-            }
-
             if (Input.GetKey("d") && Input.GetKey("w"))
             {
                 rb.velocity = new Vector2(speed, speed).normalized * speed;
