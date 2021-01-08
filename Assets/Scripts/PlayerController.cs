@@ -15,8 +15,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] SpriteRenderer BigDarkSprite;
     [SerializeField] SpriteRenderer SmallDarkSprite;
 
-    float bigDarkTransparent;
-    float smallDarkTransparent;
+    [Range (0,1)]
+    [SerializeField] float bigDarkTransparent;
+    [Range (0,1)]
+    [SerializeField] float smallDarkTransparent;
+
+    [SerializeField] int baseBigDark = 130;
+    [SerializeField] int baseSmallDark = 100;
+    [SerializeField] float multiplierBigDark = 0.65f;
+    [SerializeField] float multiplierSmallDark = 0.6f;
+    [SerializeField] GameObject triggered;
 
 
     private void Start()
@@ -58,8 +66,8 @@ public class PlayerController : MonoBehaviour
     {
         float mySanity = sanity.SanityCheck();
 
-        bigDarkTransparent = (135 - mySanity) * .01f;
-        smallDarkTransparent = ((115 - mySanity) / 1.4f) * 0.01f;
+        bigDarkTransparent = ((baseBigDark - mySanity) * multiplierBigDark) * .01f;
+        smallDarkTransparent = ((baseSmallDark - mySanity) * multiplierSmallDark) * 0.01f;
 
         SetBigDSpriteTrans(bigDarkTransparent);
         SetSmallDSpriteTrans(smallDarkTransparent);
@@ -78,33 +86,36 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D trigger)
     {
+        triggered = trigger.gameObject;
         if (trigger.gameObject.tag == "Safe")
         {            
             sanity.ToggleSafe();
+        }
+        else if (trigger.gameObject.TryGetComponent<LightCollider>(out LightCollider lightCollider))
+        {
+            sanity.ToggleDim();
         }
     }
 
     private void OnTriggerExit2D(Collider2D trigger)
     {
+        triggered = null;
         if (trigger.gameObject.tag == "Safe")
         {
             sanity.ToggleSafe();
+        }
+        else if (trigger.gameObject.TryGetComponent<LightCollider>(out LightCollider lightCollider))
+        {
+            sanity.ToggleDim();
         }
     }
 
     public void PlayerUse()
     {
-        Debug.Log("button pressed");
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Light_Box>() != null)
+        if (triggered != null && triggered.TryGetComponent<Light_Box>(out Light_Box interactible))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                PlayerUse();
-            }
+            Debug.Log("button pressed");
+            interactible.UseObject();
         }
     }
 
@@ -146,6 +157,10 @@ public class PlayerController : MonoBehaviour
 
         if (!sanity.isDead && !isPaused)
         {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                PlayerUse();
+            }
             if (Input.GetKey("d") && Input.GetKey("w"))
             {
                 rb.velocity = new Vector2(speed, speed).normalized * speed;
@@ -191,7 +206,10 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            StartRespawn();
+            if (sanity.isDead == true)
+            {
+                StartRespawn();
+            }
             rb.velocity = new Vector2(0, 0);
         }
     }

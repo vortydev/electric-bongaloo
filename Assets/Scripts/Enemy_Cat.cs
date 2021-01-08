@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Cat : Enemy
+public class Enemy_Cat :Roaming
 {
     Animator cat;
     [SerializeField] BoxCollider2D tall;
