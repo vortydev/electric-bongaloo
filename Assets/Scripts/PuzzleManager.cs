@@ -30,7 +30,8 @@ public class PuzzleManager : MonoBehaviour
     {
         for (int i = 0; i < puzzles.Length; i++)
         {
-            puzzles[i].ScramblePipes();
+            if (!puzzles[i].completed)
+                puzzles[i].ScramblePipes();
         }
     }
 

@@ -38,4 +38,6 @@ public class Puzzle : MonoBehaviour
             pipes[i].ShuffleCurPos();
         }
     }
+
+    // method(s) to handle the lights
 }
