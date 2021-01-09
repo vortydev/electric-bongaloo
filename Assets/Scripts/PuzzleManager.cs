@@ -32,8 +32,8 @@ public class PuzzleManager : MonoBehaviour
         {
             if (!puzzles[i].completed)
             {
-                puzzles[i].ScramblePipes();
                 puzzles[i].TurnLightBoxesOff();
+                puzzles[i].ScramblePipes();
             }
         }
     }

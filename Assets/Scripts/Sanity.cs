@@ -144,14 +144,4 @@ public class Sanity : MonoBehaviour
 
         UpdateSanityBar();
     }
-
-    public void ToggleSafe()
-    {
-        isSafe = !isSafe;
-    }
-
-    public void ToggleDim()
-    {
-        isDim = !isDim;
-    }
 }

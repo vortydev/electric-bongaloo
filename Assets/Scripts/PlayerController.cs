@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float multiplierBigDark = 0.65f;
     [SerializeField] float multiplierSmallDark = 0.6f;
 
+    private bool inDimTrigger = false;
 
     private void Start()
     {
@@ -84,12 +85,16 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D trigger)
     {
         if (trigger.gameObject.tag == "Safe")
-        {            
-            sanity.ToggleSafe();
-        }
-        else if (trigger.gameObject.tag == "Dim")
         {
-            sanity.ToggleDim();
+            sanity.isSafe = true;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D trigger)
+    {
+        if (trigger.gameObject.tag == "Dim")
+        {
+            sanity.isDim = true;
         }
     }
 
@@ -97,11 +102,11 @@ public class PlayerController : MonoBehaviour
     {
         if (trigger.gameObject.tag == "Safe")
         {
-            sanity.ToggleSafe();
+            sanity.isSafe = false;
         }
         else if (trigger.gameObject.tag == "Dim")
         {
-            sanity.ToggleDim();
+            sanity.isDim = false;
         }
     }
 
