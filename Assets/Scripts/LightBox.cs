@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Light_Box : MonoBehaviour
+public class LightBox : MonoBehaviour
 {
     public int id;
 
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] GameObject spriteMask;
     public bool maskEnabled;
+
+    [SerializeField] Pipe[] requiredPipes;
 
     private int visibleLayer = 5;
     private int hiddenLayer = 1;

@@ -10,6 +10,7 @@ public class Puzzle : MonoBehaviour
     public bool completed = false;
 
     [SerializeField] Pipe[] pipes;
+    [SerializeField] LightBox[] lightBoxes;
 
     public void CheckPuzzleCompletion()
     {
