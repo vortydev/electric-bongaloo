@@ -5,10 +5,10 @@ using UnityEngine;
 public class Roaming : Enemy
 {
     [SerializeField] GameObject[] waypoints;
-    [SerializeField] GameObject location;
     [SerializeField] GameObject destination;
     [SerializeField] bool choosingRandoWaypoint = true;
     [SerializeField] int currentWaypoint = 0; //choose in Inspector which Patrol Point to start with
+    [SerializeField] bool isWaiting = true;
 
     
     [Range (0f, 5f)]
@@ -22,6 +22,11 @@ public class Roaming : Enemy
     public GameObject GetDestination()
     {
         return destination;
+    }
+
+    public bool GetIsWaiting() 
+    {
+        return isWaiting;
     }
 
     int GetRandomInt()
