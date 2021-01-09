@@ -33,4 +33,20 @@ public class LightBox : MonoBehaviour
         spriteMask.SetActive(false);
         maskEnabled = spriteMask.activeSelf;
     }
+
+    public void CheckLightBoxPowered()
+    {
+        int poweringPipes = 0;
+
+        for (int i = 0; i < requiredPipes.Length; i++)
+        {
+            if (requiredPipes[i].isGucci)
+                poweringPipes++;
+        }
+
+        if (poweringPipes == requiredPipes.Length)
+            TurnOn();
+        else
+            TurnOff();
+    }
 }

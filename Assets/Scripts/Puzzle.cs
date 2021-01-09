@@ -29,6 +29,12 @@ public class Puzzle : MonoBehaviour
         else
             completed = false;
 
+        // checks if lightboxes need to be powered
+        for (int i = 0; i < lightBoxes.Length; i++)
+        {
+            lightBoxes[i].CheckLightBoxPowered();
+        }
+
         puzzleManager.CheckGameWon();
     }
 
@@ -40,5 +46,11 @@ public class Puzzle : MonoBehaviour
         }
     }
 
-    // method(s) to handle the lights
+    public void TurnLightBoxesOff()
+    {
+        for (int i = 0; i < lightBoxes.Length; i++)
+        {
+            lightBoxes[i].TurnOff();
+        }
+    }
 }
