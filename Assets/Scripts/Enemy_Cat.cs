@@ -4,59 +4,87 @@ using UnityEngine;
 
 public class Enemy_Cat :Roaming
 {
-    Animator cat;
+    Animator animator;
+    Roaming roaming;
     [SerializeField] BoxCollider2D tall;
     [SerializeField] BoxCollider2D wide;
 
     // Start is called before the first frame update
     void Start()
     {
-        cat = gameObject.GetComponent<Animator>();   
+        animator = gameObject.GetComponent<Animator>();
+        roaming = gameObject.GetComponent<Roaming>();
+        roaming.SetDestination(gameObject);
     }    
 
     void AnimRight()
     {
-        cat.SetBool("face_Right", true);
-        cat.SetBool("face_Left", !true);
-        cat.SetBool("face_Back", !true);
-        cat.SetBool("face_Front", !true);
+        animator.SetBool("face_Right", true);
+        animator.SetBool("face_Left", !true);
+        animator.SetBool("face_Back", !true);
+        animator.SetBool("face_Front", !true);
         tall.enabled = false;
         wide.enabled = true;
     }
 
     void AnimLeft()
     {
-        cat.SetBool("face_Right", !true);
-        cat.SetBool("face_Left", true);
-        cat.SetBool("face_Back", !true);
-        cat.SetBool("face_Front", !true);
+        animator.SetBool("face_Right", !true);
+        animator.SetBool("face_Left", true);
+        animator.SetBool("face_Back", !true);
+        animator.SetBool("face_Front", !true);
         tall.enabled = false;
         wide.enabled = true;
     }
 
     void AnimFront()
     {
-        cat.SetBool("face_Right", !true);
-        cat.SetBool("face_Left", !true);
-        cat.SetBool("face_Back", !true);
-        cat.SetBool("face_Front", true);
+        animator.SetBool("face_Right", !true);
+        animator.SetBool("face_Left", !true);
+        animator.SetBool("face_Back", !true);
+        animator.SetBool("face_Front", true);
         tall.enabled = true;
         wide.enabled = false;
     }
 
     void AnimBack()
     {
-        cat.SetBool("face_Right", !true);
-        cat.SetBool("face_Left", !true);
-        cat.SetBool("face_Back", true);
-        cat.SetBool("face_Front", !true);
+        animator.SetBool("face_Right", !true);
+        animator.SetBool("face_Left", !true);
+        animator.SetBool("face_Back", true);
+        animator.SetBool("face_Front", !true);
         tall.enabled = true;
         wide.enabled = false;
+    }
+
+    void ChangeAnimDirection()
+    {//x- faceRight, x+ faceLeft, y- faceBack, y+ faceFront
+        float dirX = gameObject.transform.position.x - roaming.GetDestination().transform.position.x;
+        float dirY = gameObject.transform.position.y - roaming.GetDestination().transform.position.y;
+        //Debug.Log("x value is " + dirX + ", y value is " + dirY);
+
+        if (Mathf.Abs(dirX) > Mathf.Abs(dirY))
+        {
+            if (dirX > 0)
+            {
+                AnimLeft();
+            }
+            else AnimRight();
+        }
+        else
+        {
+            if (dirY > 0)
+            {
+                AnimFront();
+            }
+            else AnimBack();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        ChangeAnimDirection();
+        roaming.MoveToWaypoint(GetVector2());
     }
 }
