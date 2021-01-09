@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int baseSmallDark = 100;
     [SerializeField] float multiplierBigDark = 0.65f;
     [SerializeField] float multiplierSmallDark = 0.6f;
-    [SerializeField] GameObject triggered;
 
+    private bool inDimTrigger = false;
 
     private void Start()
     {
@@ -50,17 +50,15 @@ public class PlayerController : MonoBehaviour
         respawning = false;
     }
 
-    void SetBigDSpriteTrans(float transparency)
+    private void SetBigDSpriteTrans(float transparency)
     {
         BigDarkSprite.color = new Color (BigDarkSprite.color.r, BigDarkSprite.color.g, BigDarkSprite.color.b, transparency);
     }
 
-    void SetSmallDSpriteTrans(float transparency)
+    private void SetSmallDSpriteTrans(float transparency)
     {
         SmallDarkSprite.color = new Color(SmallDarkSprite.color.r, SmallDarkSprite.color.g, SmallDarkSprite.color.b, transparency);
     }
-
-
 
     private void updateLighting()
     {
@@ -86,36 +84,29 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D trigger)
     {
-        triggered = trigger.gameObject;
         if (trigger.gameObject.tag == "Safe")
-        {            
-            sanity.ToggleSafe();
-        }
-        else if (trigger.gameObject.TryGetComponent<LightCollider>(out LightCollider lightCollider))
         {
-            sanity.ToggleDim();
+            sanity.isSafe = true;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D trigger)
+    {
+        if (trigger.gameObject.tag == "Dim")
+        {
+            sanity.isDim = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D trigger)
     {
-        triggered = null;
         if (trigger.gameObject.tag == "Safe")
         {
-            sanity.ToggleSafe();
+            sanity.isSafe = false;
         }
-        else if (trigger.gameObject.TryGetComponent<LightCollider>(out LightCollider lightCollider))
+        else if (trigger.gameObject.tag == "Dim")
         {
-            sanity.ToggleDim();
-        }
-    }
-
-    public void PlayerUse()
-    {
-        if (triggered != null && triggered.TryGetComponent<Light_Box>(out Light_Box interactible))
-        {
-            Debug.Log("button pressed");
-            interactible.UseObject();
+            sanity.isDim = false;
         }
     }
 
@@ -157,10 +148,6 @@ public class PlayerController : MonoBehaviour
 
         if (!sanity.isDead && !isPaused)
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                PlayerUse();
-            }
             if (Input.GetKey("d") && Input.GetKey("w"))
             {
                 rb.velocity = new Vector2(speed, speed).normalized * speed;
