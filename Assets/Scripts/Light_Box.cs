@@ -4,49 +4,31 @@ using UnityEngine;
 
 public class Light_Box : MonoBehaviour
 {
-    [SerializeField] GameObject lightBoxChild;
+    public int id;
+
     [SerializeField] SpriteRenderer spriteRenderer;
-    int visibleLayer = 5;
-    int hiddenLayer = 1;
-    [SerializeField] public bool maskEnabled;
+    [SerializeField] GameObject spriteMask;
+    public bool maskEnabled;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int visibleLayer = 5;
+    private int hiddenLayer = 1;
 
-    void ChangeSpriteLayer(int desiredLayer)
+    private void ChangeSpriteLayer(int desiredLayer)
     {
         spriteRenderer.sortingOrder = desiredLayer;
-    }
-
-    public void UseObject()
-    {
-        if (!maskEnabled)
-        {
-            TurnOn();
-        }
-        else TurnOff();
     }
 
     public void TurnOn()
     {
         ChangeSpriteLayer(visibleLayer);
-        lightBoxChild.SetActive(true);
-        maskEnabled = lightBoxChild.activeSelf;
+        spriteMask.SetActive(true);
+        maskEnabled = spriteMask.activeSelf;
     }
 
     public void TurnOff()
     {
         ChangeSpriteLayer(hiddenLayer);
-        lightBoxChild.SetActive(false);
-        maskEnabled = lightBoxChild.activeSelf;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        spriteMask.SetActive(false);
+        maskEnabled = spriteMask.activeSelf;
     }
 }

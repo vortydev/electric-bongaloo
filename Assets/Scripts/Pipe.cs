@@ -26,7 +26,7 @@ public class Pipe : MonoBehaviour
     private void Update()
     {
         if (canRotate)
-            if (Input.GetKeyDown("e"))
+            if (Input.GetButtonDown("Fire1"))
                 RotatePipe();
     }
 

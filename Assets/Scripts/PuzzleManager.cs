@@ -7,6 +7,9 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] Puzzle[] puzzles;      // array of the game's puzzles
     [SerializeField] GameObject[] walls;    // array of the walls
 
+    public Vector2[] room1;
+    public Vector2[] room2;
+
     public bool gameWon = false;
 
     public void CheckGameWon()

@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-6995417528706437648
+--- !u!1102 &-7497161321597136397
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody25
+  m_Name: SanityBody11
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,33 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e6dd698ae4399dd4ebc43294fabed3bb, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &-6923976205403630806
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody8
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 60691749b9d21bc45942168f344a772c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4baf4bbe586fd934cb56166069a8b632, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -72,13 +46,13 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 68982e5e9f0cb2f4286c9eb958559322, type: 2}
+  m_Motion: {fileID: 7400000, guid: ef724df629c72694da5aeffde2222071, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-5769182754265201156
+--- !u!1102 &-6083252591949084781
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -98,20 +72,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5ff5cf9fc470cc841a9bd5eeae2e7a1c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 33ab569205d00f34ca07eeff4332dfc8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-4883529387306769025
+--- !u!1102 &-5792517832853717595
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody21
+  m_Name: SanityBody13
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -124,20 +98,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: aa202a352d4bb68479692fec21ca4df8, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1742b5f81c05f5749a33a727ea4865bc, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-4209470954590402995
+--- !u!1102 &-5649067895939978249
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody24
+  m_Name: SanityBody10
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -150,20 +124,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0d042fb9c318a5a4fb25b5efc45ed738, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5e617726651073742995a4548715532d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-4166691496469712359
+--- !u!1102 &-5033900124996117731
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody22
+  m_Name: SanityBody17
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -176,7 +150,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: fd2bfc9467a81a742babbd35ab6c5145, type: 2}
+  m_Motion: {fileID: 7400000, guid: b6fabaa428320c2449802fa4a922678a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -195,77 +169,77 @@ AnimatorStateMachine:
     m_State: {fileID: -6158334368000947956}
     m_Position: {x: 320, y: -220, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -3247472949296728121}
-    m_Position: {x: 320, y: -170, z: 0}
+    m_State: {fileID: 3927842973290758477}
+    m_Position: {x: 355, y: -155, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -5769182754265201156}
-    m_Position: {x: 320, y: -120, z: 0}
+    m_State: {fileID: -6083252591949084781}
+    m_Position: {x: 390, y: -90, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 2358182043711006346}
-    m_Position: {x: 320, y: -70, z: 0}
+    m_State: {fileID: 7030680385177905233}
+    m_Position: {x: 425, y: -25, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 5668665001687405299}
-    m_Position: {x: 320, y: -20, z: 0}
+    m_State: {fileID: 4458210845613086931}
+    m_Position: {x: 460, y: 40, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 2096049505423591896}
-    m_Position: {x: 320, y: 30, z: 0}
+    m_State: {fileID: 4465597792729402579}
+    m_Position: {x: 495, y: 105, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 4834660028064248326}
-    m_Position: {x: 320, y: 80, z: 0}
+    m_State: {fileID: 5932276757520116059}
+    m_Position: {x: 530, y: 170, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -6923976205403630806}
-    m_Position: {x: 320, y: 130, z: 0}
+    m_State: {fileID: 6579821877819023436}
+    m_Position: {x: 565, y: 235, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -2669276281420012020}
-    m_Position: {x: 320, y: 180, z: 0}
+    m_State: {fileID: 3447862107004997432}
+    m_Position: {x: 600, y: 300, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 5091747068251189396}
-    m_Position: {x: 320, y: 230, z: 0}
+    m_State: {fileID: -5649067895939978249}
+    m_Position: {x: 635, y: 365, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 4062003834006920880}
-    m_Position: {x: 530, y: -220, z: 0}
+    m_State: {fileID: -7497161321597136397}
+    m_Position: {x: 670, y: 430, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 2468011198048481875}
-    m_Position: {x: 530, y: -170, z: 0}
+    m_State: {fileID: -1579016097449755659}
+    m_Position: {x: 705, y: 495, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 5001025903290917222}
-    m_Position: {x: 530, y: -120, z: 0}
+    m_State: {fileID: -5792517832853717595}
+    m_Position: {x: 740, y: 560, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 5927351905682380320}
-    m_Position: {x: 530, y: -70, z: 0}
+    m_State: {fileID: -2038474766930592875}
+    m_Position: {x: 775, y: 625, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 5796329313707412641}
-    m_Position: {x: 530, y: -20, z: 0}
+    m_State: {fileID: -2313347415872283085}
+    m_Position: {x: 810, y: 690, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -1582379112570993749}
-    m_Position: {x: 530, y: 30, z: 0}
+    m_State: {fileID: 3766298570443513171}
+    m_Position: {x: 845, y: 755, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 7527972914121620696}
-    m_Position: {x: 530, y: 80, z: 0}
+    m_State: {fileID: -5033900124996117731}
+    m_Position: {x: 880, y: 820, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -2715133384799441001}
-    m_Position: {x: 530, y: 130, z: 0}
+    m_State: {fileID: 398080122983354177}
+    m_Position: {x: 915, y: 885, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -714652559244354193}
-    m_Position: {x: 530, y: 180, z: 0}
+    m_State: {fileID: 8755883969843216397}
+    m_Position: {x: 950, y: 950, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 6484251710979993597}
-    m_Position: {x: 530, y: 230, z: 0}
+    m_State: {fileID: 8053704943510841891}
+    m_Position: {x: 985, y: 1015, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -4883529387306769025}
-    m_Position: {x: 740, y: -220, z: 0}
+    m_State: {fileID: 2509174664710889096}
+    m_Position: {x: 1020, y: 1080, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -4166691496469712359}
-    m_Position: {x: 740, y: -170, z: 0}
+    m_State: {fileID: 9202090144243864138}
+    m_Position: {x: 1055, y: 1145, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -1156695529391414002}
-    m_Position: {x: 740, y: -120, z: 0}
+    m_State: {fileID: -987373144361297193}
+    m_Position: {x: 1090, y: 1210, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -4209470954590402995}
-    m_Position: {x: 740, y: -70, z: 0}
+    m_State: {fileID: 6684353598222643552}
+    m_Position: {x: 1125, y: 1275, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -6995417528706437648}
-    m_Position: {x: 740, y: -20, z: 0}
+    m_State: {fileID: 4294096622076944319}
+    m_Position: {x: 1160, y: 1340, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -276,14 +250,14 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 50, y: 190, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -6158334368000947956}
---- !u!1102 &-3247472949296728121
+--- !u!1102 &-2313347415872283085
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody2
+  m_Name: SanityBody15
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -296,20 +270,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d842450f783584b4aa5fc719727cce8f, type: 2}
+  m_Motion: {fileID: 7400000, guid: 003f8852fa154934693f2a11cc925958, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-2715133384799441001
+--- !u!1102 &-2038474766930592875
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody18
+  m_Name: SanityBody14
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -322,20 +296,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5984952bfb6252545a8d22dbd987d20d, type: 2}
+  m_Motion: {fileID: 7400000, guid: bd0f72425ac016a4f9e84a0ae562069e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-2669276281420012020
+--- !u!1102 &-1579016097449755659
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody9
+  m_Name: SanityBody12
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -348,39 +322,13 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1784bc4feb62f3c4784712cc4eab1b65, type: 2}
+  m_Motion: {fileID: 7400000, guid: 74ef03a3dc193e94799bb12a7b324920, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-1582379112570993749
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody16
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: df7104afca16bda45991477f5c1594b8, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &-1156695529391414002
+--- !u!1102 &-987373144361297193
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -400,33 +348,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 76ca631f3d64ad4429f0c571c4845e68, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &-714652559244354193
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody19
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6ab2213444296ff4da35ce30e7882a26, type: 2}
+  m_Motion: {fileID: 7400000, guid: e0385e88bdef54442b83b917c3bb4e79, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -460,14 +382,14 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &2096049505423591896
+--- !u!1102 &398080122983354177
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody6
+  m_Name: SanityBody18
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -480,20 +402,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 225c0d3acd4aced42bfdbef17559903e, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4469529db7017b047863e0ca653043fb, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &2358182043711006346
+--- !u!1102 &716137522120536186
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody4
+  m_Name: SanityBody1 0
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -506,20 +428,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b36b8a47c64b60d4fa19d094145541e4, type: 2}
+  m_Motion: {fileID: 0}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &2468011198048481875
+--- !u!1102 &2509174664710889096
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody12
+  m_Name: SanityBody21
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -532,20 +454,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5900505ca3cba164aa5629c00d0516bd, type: 2}
+  m_Motion: {fileID: 7400000, guid: 60b200711dc14fd4a9d5fdcd7c448551, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &4062003834006920880
+--- !u!1102 &3447862107004997432
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody11
+  m_Name: SanityBody9
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -558,20 +480,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 14a77145f774ab445bf47241f570ec77, type: 2}
+  m_Motion: {fileID: 7400000, guid: 545c99fd2bece1949b8bd63c8f80ff84, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &4834660028064248326
+--- !u!1102 &3766298570443513171
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody7
+  m_Name: SanityBody16
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -584,20 +506,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1b9685d04ffd58148bdc9e166572dd42, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5162a041ebcaa254dba209027c836bfc, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &5001025903290917222
+--- !u!1102 &3927842973290758477
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody13
+  m_Name: SanityBody2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -610,20 +532,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7699c8b160952fe459ee604646d0553b, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4ef271fdc36ee7247aa5d0fc00fd3917, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &5091747068251189396
+--- !u!1102 &4294096622076944319
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody10
+  m_Name: SanityBody25
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -636,13 +558,13 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f476b80d6be776a47be9d0f5f5f74a80, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5f068b9dc39c66e42abd0e27dd80605e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &5668665001687405299
+--- !u!1102 &4458210845613086931
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -662,20 +584,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4fd95ac7edcf1d745b8d96cfb9da3eca, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9bcf5a254c6ff304da8658942a66a486, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &5796329313707412641
+--- !u!1102 &4465597792729402579
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody15
+  m_Name: SanityBody6
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -688,20 +610,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0438aea499ac4eb4db77d9e20202fb24, type: 2}
+  m_Motion: {fileID: 7400000, guid: d81605c6a71f90f43bc47fba24ecd2a1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &5927351905682380320
+--- !u!1102 &5932276757520116059
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody14
+  m_Name: SanityBody7
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -714,13 +636,91 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c104a9a5ee3008944952485d1fade631, type: 2}
+  m_Motion: {fileID: 7400000, guid: 58e9d091912a3b54ea2cbe9321d119f8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &6484251710979993597
+--- !u!1102 &6579821877819023436
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SanityBody8
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: d7701a243c237e343b772bad7720a108, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &6684353598222643552
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SanityBody24
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: a1679d4c7d980624a8c2960aa512f801, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &7030680385177905233
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SanityBody4
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: ef2949b6fef1ff74990f6fa113903b99, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &8053704943510841891
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -740,20 +740,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: feb2d2effc0497e4a875ef569d564587, type: 2}
+  m_Motion: {fileID: 7400000, guid: 22be4b9661b54f14abfc29fdefbc43ee, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &7527972914121620696
+--- !u!1102 &8755883969843216397
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SanityBody17
+  m_Name: SanityBody19
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -766,7 +766,33 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 95dce98d3a2bbc146a61b69b1879305c, type: 2}
+  m_Motion: {fileID: 7400000, guid: c1f6b7196a0dfa44992fd8b4cf7b77f3, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &9202090144243864138
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SanityBody22
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: d65a6840d19ee094fbdeeffcc759e510, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

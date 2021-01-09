@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Safe
   - Pipe
+  - Dim
   layers:
   - Default
   - TransparentFX
