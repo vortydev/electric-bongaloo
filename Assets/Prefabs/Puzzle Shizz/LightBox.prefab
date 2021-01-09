@@ -93,13 +93,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5151907295506652692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf46f552be9541d4392fca3291d4994f, type: 3}
+  m_Script: {fileID: 11500000, guid: 617062d5d55fb984391ef28338c6af70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
   spriteRenderer: {fileID: 5151907295506652681}
   spriteMask: {fileID: 5151907296887148281}
   maskEnabled: 0
+  requiredPipes: []
 --- !u!1 &5151907296887148281
 GameObject:
   m_ObjectHideFlags: 0

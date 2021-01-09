@@ -6,12 +6,11 @@ public class Pipe : MonoBehaviour
 {
     [SerializeField] Puzzle puzzle;  // puzzle the pipe belongs to
 
-    public int id;          // id of the pipe
     public int pipeType;    // type of pipe (1: corner and tee, 2: straight)
 
+    public int correctPos;  // correct position
     public int initPos;     // initial pipe position
     public int curPos;      // current pipe position
-    public int correctPos;  // correct position
     public bool isGucci;    // bool if the pipe is correctly placed
 
     private bool canRotate = false;
