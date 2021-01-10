@@ -84,7 +84,10 @@ public class Enemy_Cat :Roaming
     // Update is called once per frame
     void Update()
     {
-        ChangeAnimDirection();
-        roaming.MoveToWaypoint(GetVector2());        
+        if (!roaming.GetIsWaiting())
+        {
+            ChangeAnimDirection();
+            roaming.MoveToWaypoint(GetVector2());
+        }
     }
 }

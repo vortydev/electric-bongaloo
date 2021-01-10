@@ -62,7 +62,7 @@ PrefabInstance:
     - target: {fileID: 5103804306378008173, guid: 7785667a74cf6ac4d89b6c0dad3fdec5, type: 3}
       propertyPath: waypoints.Array.data[4]
       value: 
-      objectReference: {fileID: 1693573948162047422}
+      objectReference: {fileID: 0}
     - target: {fileID: 6314298835131583156, guid: 7785667a74cf6ac4d89b6c0dad3fdec5, type: 3}
       propertyPath: speed
       value: 2
@@ -98,6 +98,14 @@ PrefabInstance:
     - target: {fileID: 6314298835199474602, guid: 7785667a74cf6ac4d89b6c0dad3fdec5, type: 3}
       propertyPath: speed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314298835199474602, guid: 7785667a74cf6ac4d89b6c0dad3fdec5, type: 3}
+      propertyPath: currentWaypoint
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314298835199474602, guid: 7785667a74cf6ac4d89b6c0dad3fdec5, type: 3}
+      propertyPath: choosingRandoWaypoint
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6314298835199474602, guid: 7785667a74cf6ac4d89b6c0dad3fdec5, type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -184,6 +192,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6314298835520715553, guid: 7785667a74cf6ac4d89b6c0dad3fdec5, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314298835520715553, guid: 7785667a74cf6ac4d89b6c0dad3fdec5, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1693573947001043963}
@@ -202,7 +214,7 @@ PrefabInstance:
     - target: {fileID: 6314298835520715553, guid: 7785667a74cf6ac4d89b6c0dad3fdec5, type: 3}
       propertyPath: waypoints.Array.data[4]
       value: 
-      objectReference: {fileID: 1693573948162047422}
+      objectReference: {fileID: 0}
     - target: {fileID: 6314298835722086517, guid: 7785667a74cf6ac4d89b6c0dad3fdec5, type: 3}
       propertyPath: speed
       value: 2
@@ -749,11 +761,6 @@ GameObject:
 --- !u!1 &1693573946395238403 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6657249032334353872, guid: 72db0e253e63239409ab5932b5eba96c, type: 3}
-  m_PrefabInstance: {fileID: 5468359719253214675}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1693573948162047422 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6657249032830285933, guid: 72db0e253e63239409ab5932b5eba96c, type: 3}
   m_PrefabInstance: {fileID: 5468359719253214675}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1693573947395442134 stripped
