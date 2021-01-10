@@ -12,9 +12,13 @@ public class GameDoots : MonoBehaviour
     [SerializeField] AudioSource track2;
     [SerializeField] AudioSource track3;
 
-    // sfx
+    // menu sfx
     [SerializeField] AudioSource pause;
     [SerializeField] AudioSource unpause;
+
+    // puzzle sfx
+    [SerializeField] AudioSource lightOn;
+    [SerializeField] AudioSource lightOff;
 
     void Start()
     {
@@ -39,5 +43,17 @@ public class GameDoots : MonoBehaviour
     {
         unpause.volume = (audioController.sfx / 10) / 2;
         unpause.Play();
+    }
+
+    public void PlayLightOnSound()
+    {
+        lightOn.volume = (audioController.sfx / 10) / 2;
+        lightOn.Play();
+    }
+
+    public void PlayLightOffSound()
+    {
+        lightOff.volume = (audioController.sfx / 10) / 2;
+        lightOff.Play();
     }
 }

@@ -9,6 +9,8 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] Puzzle[] puzzles;      // array of the game's puzzles
     [SerializeField] GameObject[] walls;    // array of the walls
 
+    [SerializeField] GameDoots gameDoots;
+
     public void CheckGameWon()
     {
         int puzzlesCompleted = 0;
@@ -39,4 +41,14 @@ public class PuzzleManager : MonoBehaviour
     }
 
     // method to remove walls 
+
+    public void PlayLightOn()
+    {
+        gameDoots.PlayLightOnSound();
+    }
+
+    public void PlayLightOff()
+    {
+        gameDoots.PlayLightOffSound();
+    }
 }

@@ -32,7 +32,16 @@ public class Puzzle : MonoBehaviour
         // checks if lightboxes need to be powered
         for (int i = 0; i < lightBoxes.Length; i++)
         {
-            lightBoxes[i].CheckLightBoxPowered();
+            if (lightBoxes[i].CheckLightBoxPowered() && !lightBoxes[i].maskEnabled)
+            {
+                lightBoxes[i].TurnOn();
+                puzzleManager.PlayLightOn();
+            }
+            else if (!lightBoxes[i].CheckLightBoxPowered() && lightBoxes[i].maskEnabled)
+            {
+                lightBoxes[i].TurnOff();
+                puzzleManager.PlayLightOff();
+            }
         }
 
         puzzleManager.CheckGameWon();
