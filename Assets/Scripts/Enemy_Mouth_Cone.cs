@@ -26,9 +26,9 @@ public class Enemy_Mouth_Cone : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(!roaming.GetIsWaiting())
-        go.transform.Rotate(0,0,rotationSpeed);
+        go.transform.Rotate(0,0,rotationSpeed * Time.fixedDeltaTime);
     }
 }
