@@ -22,6 +22,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI musicVal;
     [SerializeField] TextMeshProUGUI sfxVal;
 
+    [SerializeField] ThePuppetMaster winPopup;
+
     public void Start()
     {
         // load slider settings
@@ -35,7 +37,7 @@ public class PauseMenu : MonoBehaviour
     public void Update()
     {
         // manages opening and closing the pause menu (press Esc)
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !winPopup.displayed)
         {
             if (pauseMenu.IsActive())
                 OnUnpauseMenu();
