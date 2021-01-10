@@ -37,7 +37,7 @@ public class PuzzleManager : MonoBehaviour
 
     public void ScramblePuzzles()
     {
-        for (int i = 0; i < puzzles.Length; i++)
+        for (int i = 0; i < puzzles.Length - 1; i++)
         {
             if (!puzzles[i].completed)
             {
@@ -45,6 +45,9 @@ public class PuzzleManager : MonoBehaviour
                 puzzles[i].ScramblePipes();
             }
         }
+
+        puzzles[2].TurnLightBoxesOff();
+        puzzles[2].ScramblePipes();
     }
 
     public void PlayLightOn()
