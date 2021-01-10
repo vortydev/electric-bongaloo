@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &6696672 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5151907295506652683, guid: e367df08b8769444f973b9ae4e288b78, type: 3}
-  m_PrefabInstance: {fileID: 694665269}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 617062d5d55fb984391ef28338c6af70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &9021304 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7256687381152271117, guid: d432ff83b2c62ee408abeae8f21a59ca, type: 3}
@@ -1751,7 +1740,7 @@ PrefabInstance:
       objectReference: {fileID: 1770220042}
     - target: {fileID: 5151907295506652692, guid: e367df08b8769444f973b9ae4e288b78, type: 3}
       propertyPath: m_Name
-      value: LightBox_3-25
+      value: LightBox_3-24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e367df08b8769444f973b9ae4e288b78, type: 3}
@@ -7735,7 +7724,7 @@ PrefabInstance:
     - target: {fileID: 5151907295506652683, guid: e367df08b8769444f973b9ae4e288b78, type: 3}
       propertyPath: requiredPipes.Array.data[24]
       value: 
-      objectReference: {fileID: 29597121}
+      objectReference: {fileID: 2124037894}
     - target: {fileID: 5151907295506652683, guid: e367df08b8769444f973b9ae4e288b78, type: 3}
       propertyPath: requiredPipes.Array.data[25]
       value: 
@@ -8644,7 +8633,7 @@ MonoBehaviour:
   - {fileID: 1192289650}
   - {fileID: 2084257242}
   - {fileID: 1306019872}
-  - {fileID: 29597121}
+  - {fileID: 2124037894}
   - {fileID: 398704229}
   - {fileID: 1051027156}
   - {fileID: 1029928180}
@@ -9632,7 +9621,7 @@ PrefabInstance:
     - target: {fileID: 5151907295506652683, guid: e367df08b8769444f973b9ae4e288b78, type: 3}
       propertyPath: requiredPipes.Array.data[24]
       value: 
-      objectReference: {fileID: 29597121}
+      objectReference: {fileID: 2124037894}
     - target: {fileID: 5151907295506652692, guid: e367df08b8769444f973b9ae4e288b78, type: 3}
       propertyPath: m_Name
       value: LightBox_3-18
@@ -9993,7 +9982,7 @@ Transform:
   - {fileID: 1192289649}
   - {fileID: 2084257241}
   - {fileID: 1306019871}
-  - {fileID: 29597120}
+  - {fileID: 2124037893}
   - {fileID: 398704228}
   - {fileID: 1051027155}
   - {fileID: 1029928179}
@@ -10669,7 +10658,7 @@ MonoBehaviour:
   - {fileID: 1155564596}
   - {fileID: 133457264}
   - {fileID: 367472065}
-  - {fileID: 8074915}
+  - {fileID: 0}
   - {fileID: 1471788268}
   - {fileID: 2011544667}
   - {fileID: 1737369528}
@@ -13758,7 +13747,7 @@ PrefabInstance:
     - target: {fileID: 5151907295506652683, guid: e367df08b8769444f973b9ae4e288b78, type: 3}
       propertyPath: requiredPipes.Array.data[4]
       value: 
-      objectReference: {fileID: 103151593}
+      objectReference: {fileID: 9021304}
     - target: {fileID: 5151907295506652683, guid: e367df08b8769444f973b9ae4e288b78, type: 3}
       propertyPath: requiredPipes.Array.data[5]
       value: 
