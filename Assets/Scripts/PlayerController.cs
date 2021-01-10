@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject respawnPoint;
     [SerializeField] SpriteRenderer BigDarkSprite;
     [SerializeField] SpriteRenderer SmallDarkSprite;
+    [SerializeField] Enemy[] enemy;
 
     [Range (0,1)]
     [SerializeField] float bigDarkTransparent;
@@ -54,6 +55,14 @@ public class PlayerController : MonoBehaviour
         SetSmallDSpriteTrans(smallDarkTransparent);
     }
 
+    void RespawnEnemies()
+    {
+        for (int i = 0; i<enemy.Length; i++)
+        {
+            enemy[i].Respawn();
+        }
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -74,6 +83,8 @@ public class PlayerController : MonoBehaviour
 
             if (puzzleManager.gameWon)
                 winManager.WinSequence();
+            
+            RespawnEnemies();
         }
     }
 
