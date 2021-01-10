@@ -7,9 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator animator;
     private Rigidbody2D rb;
     public float speed = 10;
-    float waitTime = 5f;
     public bool isPaused = false;
-    bool respawning = false;
+
     [SerializeField] Sanity sanity;
     [SerializeField] GameObject respawnPoint;
     [SerializeField] SpriteRenderer BigDarkSprite;
@@ -25,27 +24,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float multiplierBigDark = 0.65f;
     [SerializeField] float multiplierSmallDark = 0.6f;
 
+    [SerializeField] GameDoots gameDoots;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    void StartRespawn()
-    {
-        
-        if (respawning==false)
-        {
-            respawning = true;
-            StartCoroutine(RespawnDelay(waitTime));            
-        }
-    }
-
-    IEnumerator RespawnDelay(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        gameObject.transform.position = respawnPoint.transform.position;
-        sanity.isDead = false;
-        respawning = false;
     }
 
     private void SetBigDSpriteTrans(float transparency)
@@ -58,7 +41,7 @@ public class PlayerController : MonoBehaviour
         SmallDarkSprite.color = new Color(SmallDarkSprite.color.r, SmallDarkSprite.color.g, SmallDarkSprite.color.b, transparency);
     }
 
-    private void updateLighting()
+    private void UpdateLighting()
     {
         float mySanity = sanity.SanityCheck();
 
@@ -76,6 +59,7 @@ public class PlayerController : MonoBehaviour
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             sanity.LoseSanity(enemy.GetDmg());
+            gameDoots.PlayPlayerHitSound();
             enemy.Die();
         }
     }
@@ -142,7 +126,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        updateLighting();
+        UpdateLighting();
 
         if (!sanity.isDead && !isPaused)
         {
@@ -191,10 +175,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if (sanity.isDead == true)
-            {
-                StartRespawn();
-            }
             rb.velocity = new Vector2(0, 0);
         }
     }

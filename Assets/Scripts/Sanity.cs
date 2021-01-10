@@ -18,6 +18,8 @@ public class Sanity : MonoBehaviour
     public bool isSafe = true;
     public bool isDim = false;
 
+    [SerializeField] ThePuppetMaster deathManager;
+
     private void Start()
     {
         sanityBar = GetComponent<Image>();
@@ -129,7 +131,12 @@ public class Sanity : MonoBehaviour
         else if (sanity <= 0)
         {
             sanity = 0;
+        }
+
+        if (sanity <= 0)
+        {
             isDead = true;
+            deathManager.DeathSequence();
         }
 
         UpdateSanityBar();

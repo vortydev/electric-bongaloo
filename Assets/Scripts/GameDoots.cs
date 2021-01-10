@@ -29,6 +29,10 @@ public class GameDoots : MonoBehaviour
     [SerializeField] AudioSource doorOpen;
     [SerializeField] AudioSource doorClose;
 
+    // player sfx
+    [SerializeField] AudioSource playerHit;
+    [SerializeField] AudioSource playerDeath;
+
     void Start()
     {
         audioController = GetComponent<AudioController>();
@@ -99,5 +103,17 @@ public class GameDoots : MonoBehaviour
     {
         doorClose.volume = (audioController.sfx / 10);
         doorClose.Play();
+    }
+
+    public void PlayPlayerHitSound()
+    {
+        playerHit.volume = (audioController.sfx / 10) / 2;
+        playerHit.Play();
+    }
+
+    public void PlayPlayerDeathSound()
+    {
+        playerDeath.volume = (audioController.sfx / 10) / 2;
+        playerDeath.Play();
     }
 }
