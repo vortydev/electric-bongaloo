@@ -10,7 +10,7 @@ public class PuzzleManager : MonoBehaviour
 
     [SerializeField] Puzzle[] puzzles;      // array of the game's puzzles
     [SerializeField] GameObject[] walls;    // array of the walls
-    private bool[] openedWalls = { false, false, false };
+    private bool[] openedWalls = { false, false, false, false};
 
     public void CheckGameWon()
     {
