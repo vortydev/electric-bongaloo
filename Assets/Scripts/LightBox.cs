@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class LightBox : MonoBehaviour
 {
-    public int id;
-
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] GameObject spriteMask;
     public bool maskEnabled;
