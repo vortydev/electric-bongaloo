@@ -10,7 +10,7 @@ public class PuzzleManager : MonoBehaviour
 
     [SerializeField] Puzzle[] puzzles;      // array of the game's puzzles
     [SerializeField] GameObject[] walls;    // array of the walls
-    private bool[] openedWalls = { false, false, false, false };
+    private bool[] openedWalls = { false, false, false };
 
     public void CheckGameWon()
     {
@@ -64,7 +64,7 @@ public class PuzzleManager : MonoBehaviour
 
     public void RemoveWall(int ind)
     {
-        if (!openedWalls[ind])
+        if (!openedWalls[ind] && ind <= 2)
         {
             gameDoots.PlayDoorOpenSound();
             walls[ind].SetActive(false);
@@ -74,7 +74,7 @@ public class PuzzleManager : MonoBehaviour
 
     public void RaiseWall(int ind)
     {
-        if (openedWalls[ind])
+        if (openedWalls[ind] && ind <= 2)
         {
             gameDoots.PlayDoorCloseSound();
             walls[ind].SetActive(true);
