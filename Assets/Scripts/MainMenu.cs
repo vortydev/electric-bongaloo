@@ -10,15 +10,13 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        audioController.SavePlayerPrefs();
-
+        audioController.SavePlayerPrefs();  // Saves audio settings
         SceneManager.LoadScene(1); // Loads scene 1 with the actual game
     }
 
     public void QuitGame()
     {
         audioController.SavePlayerPrefs();
-
         Application.Quit(); // Quits the application
         Debug.Log("Quit");
     }

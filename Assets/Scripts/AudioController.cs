@@ -5,10 +5,10 @@ using UnityEngine;
 public class AudioController : MonoBehaviour
 {
     // audio settings
-    public float music;
-    public float sfx;
+    public float music = 10;
+    public float sfx = 10;
 
-    void Start()
+    void Awake()
     {
         // loads controller's variable from PlayerPrefs
         music = PlayerPrefs.GetFloat("music");
@@ -34,7 +34,7 @@ public class AudioController : MonoBehaviour
     public void SavePlayerPrefs()
     {
         PlayerPrefs.SetFloat("music", music);
-        PlayerPrefs.SetFloat("sfx", music);
+        PlayerPrefs.SetFloat("sfx", sfx);
         PlayerPrefs.Save();
     }
 }
