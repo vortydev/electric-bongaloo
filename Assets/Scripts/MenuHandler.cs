@@ -15,11 +15,11 @@ public class MenuHandler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!mainMenu.active)
+            if (!mainMenu.activeSelf)
             {
-                if (creditsMenu.active)
+                if (creditsMenu.activeSelf)
                     creditsMenu.SetActive(false);
-                else if (optionsMenu.active)
+                else if (optionsMenu.activeSelf)
                     optionsMenu.SetActive(false);
 
                 mainMenu.SetActive(true);
