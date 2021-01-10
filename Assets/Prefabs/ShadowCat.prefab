@@ -170,5 +170,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 20
+  waypoints: []
+  destination: {fileID: 0}
+  choosingRandoWaypoint: 1
+  currentWaypoint: 0
+  isWaiting: 0
+  speed: 2
   tall: {fileID: 1030990300}
   wide: {fileID: 1030990301}

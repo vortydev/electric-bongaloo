@@ -179,6 +179,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 342084190362900999}
     m_Modifications:
     - target: {fileID: 8343724032940289447, guid: d62b8b73d2bab4a47bdbf52c48c6f695, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343724032940289447, guid: d62b8b73d2bab4a47bdbf52c48c6f695, type: 3}
+      propertyPath: isWaiting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343724032940289447, guid: d62b8b73d2bab4a47bdbf52c48c6f695, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 342084190621733827}
@@ -195,6 +203,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 342084190571680885}
     - target: {fileID: 8343724032962399785, guid: d62b8b73d2bab4a47bdbf52c48c6f695, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343724032962399785, guid: d62b8b73d2bab4a47bdbf52c48c6f695, type: 3}
+      propertyPath: isWaiting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343724032962399785, guid: d62b8b73d2bab4a47bdbf52c48c6f695, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 342084190621733827}
@@ -211,6 +227,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 342084190571680885}
     - target: {fileID: 8343724033036666173, guid: d62b8b73d2bab4a47bdbf52c48c6f695, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343724033036666173, guid: d62b8b73d2bab4a47bdbf52c48c6f695, type: 3}
+      propertyPath: isWaiting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343724033036666173, guid: d62b8b73d2bab4a47bdbf52c48c6f695, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 342084190621733827}
@@ -226,6 +250,14 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 342084190571680885}
+    - target: {fileID: 8343724033627435661, guid: d62b8b73d2bab4a47bdbf52c48c6f695, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343724033627435661, guid: d62b8b73d2bab4a47bdbf52c48c6f695, type: 3}
+      propertyPath: isWaiting
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8343724033627435661, guid: d62b8b73d2bab4a47bdbf52c48c6f695, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
