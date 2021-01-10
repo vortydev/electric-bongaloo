@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float multiplierSmallDark = 0.6f;
 
     [SerializeField] GameDoots gameDoots;
+    [SerializeField] PuzzleManager puzzleManager;
+    [SerializeField] ThePuppetMaster winManager;
 
     private void Start()
     {
@@ -69,6 +71,9 @@ public class PlayerController : MonoBehaviour
         if (trigger.gameObject.tag == "Safe")
         {
             sanity.isSafe = true;
+
+            if (puzzleManager.gameWon)
+                winManager.WinSequence();
         }
     }
 

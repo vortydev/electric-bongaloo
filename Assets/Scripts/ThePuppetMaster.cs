@@ -9,22 +9,27 @@ public class ThePuppetMaster : MonoBehaviour
 {
     public bool displayed;
     private Image winPopup;
-    public float waitTime = 1.0f;
+
+    public float deathWaitTime = 1.0f;
+    public float winWaitTime = 2.0f;
 
     [SerializeField] PuzzleManager puzzleManager;
     [SerializeField] GameDoots gameDoots;
+    [SerializeField] GameObject respawnPoint;
 
     [SerializeField] Image sanitybar;
     [SerializeField] Sanity sanity;
 
     [SerializeField] GameObject player;
-    [SerializeField] GameObject respawnPoint;
+    private PlayerController playerController;
 
     private void Start()
     {
         winPopup = GetComponentInChildren<Image>();
         winPopup.gameObject.SetActive(false);
         displayed = false;
+
+        playerController = player.GetComponent<PlayerController>();
     }
 
     public void DeathSequence()
@@ -36,11 +41,39 @@ public class ThePuppetMaster : MonoBehaviour
         StopCoroutine(ToggleDeathBool());
     }
 
-    IEnumerator ToggleDeathBool()
+    private IEnumerator ToggleDeathBool()
     {
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(deathWaitTime);
         sanity.isDead = false;
     }
 
-    // win handling
+    public void WinSequence()
+    {
+        StartCoroutine(WinWait());
+    }
+
+    private void WinPopup()
+    {
+        StopCoroutine(WinWait());
+
+        playerController.isPaused = true;
+        displayed = true;
+        winPopup.gameObject.SetActive(true);
+    }
+
+    private IEnumerator WinWait()
+    {
+        yield return new WaitForSeconds(winWaitTime);
+        WinPopup();
+    }
+
+    public void ClickMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void ClickReplay()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
