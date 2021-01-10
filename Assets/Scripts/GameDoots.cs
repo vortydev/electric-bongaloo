@@ -12,9 +12,22 @@ public class GameDoots : MonoBehaviour
     [SerializeField] AudioSource track2;
     [SerializeField] AudioSource track3;
 
-    // sfx
+    // menu sfx
     [SerializeField] AudioSource pause;
     [SerializeField] AudioSource unpause;
+
+    // light sfx
+    [SerializeField] AudioSource lightOn;
+    [SerializeField] AudioSource lightOff;
+
+    // pipe sfx
+    [SerializeField] AudioSource pipe1;
+    [SerializeField] AudioSource pipe2;
+    [SerializeField] AudioSource pipe3;
+
+    // door sfx
+    [SerializeField] AudioSource doorOpen;
+    [SerializeField] AudioSource doorClose;
 
     void Start()
     {
@@ -39,5 +52,52 @@ public class GameDoots : MonoBehaviour
     {
         unpause.volume = (audioController.sfx / 10) / 2;
         unpause.Play();
+    }
+
+    public void PlayLightOnSound()
+    {
+        lightOn.volume = (audioController.sfx / 10) / 2;
+        lightOn.Play();
+    }
+
+    public void PlayLightOffSound()
+    {
+        lightOff.volume = (audioController.sfx / 10) / 2;
+        lightOff.Play();
+    }
+
+    public void PlayPipeSound()
+    {
+        int rng = Random.Range(1, 4);
+
+        switch (rng)
+        {
+            case 1:
+                pipe1.volume = (audioController.sfx / 10) / 2;
+                pipe1.Play();
+                break;
+
+            case 2:
+                pipe2.volume = (audioController.sfx / 10) / 2;
+                pipe2.Play();
+                break;
+
+            case 3:
+                pipe3.volume = (audioController.sfx / 10) / 2;
+                pipe3.Play();
+                break;
+        }
+    }
+
+    public void PlayDoorOpenSound()
+    {
+        doorOpen.volume = (audioController.sfx / 10) / 2;
+        doorOpen.Play();
+    }
+
+    public void PlayDoorCloseSound()
+    {
+        doorClose.volume = (audioController.sfx / 10);
+        doorClose.Play();
     }
 }

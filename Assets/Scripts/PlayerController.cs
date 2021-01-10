@@ -25,8 +25,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float multiplierBigDark = 0.65f;
     [SerializeField] float multiplierSmallDark = 0.6f;
 
-    private bool inDimTrigger = false;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
