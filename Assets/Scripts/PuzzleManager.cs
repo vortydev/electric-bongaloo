@@ -51,4 +51,9 @@ public class PuzzleManager : MonoBehaviour
     {
         gameDoots.PlayLightOffSound();
     }
+
+    public void PlayPipe()
+    {
+        gameDoots.PlayPipeSound();
+    }
 }

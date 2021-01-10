@@ -62,4 +62,9 @@ public class Puzzle : MonoBehaviour
             lightBoxes[i].TurnOff();
         }
     }
+
+    public void PlayPipeFromManager()
+    {
+        puzzleManager.PlayPipe();
+    }
 }

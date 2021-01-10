@@ -69,6 +69,8 @@ public class Pipe : MonoBehaviour
             curPos = 1;
 
         UpdatePipeRotation();   // updates the gameobject's rotation
+
+        puzzle.PlayPipeFromManager();   // plays a random pipe sound
     }
 
     private void UpdatePipeRotation()
