@@ -57,6 +57,7 @@ public class ThePuppetMaster : MonoBehaviour
         StopCoroutine(WinWait());
 
         playerController.isPaused = true;
+        sanitybar.gameObject.SetActive(false);
         displayed = true;
         winPopup.gameObject.SetActive(true);
     }
