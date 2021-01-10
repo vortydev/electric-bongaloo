@@ -10754,7 +10754,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Conglaturations
+  m_text: You Won!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8693d56d1ffdbf4438f24f2133caddd3, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8693d56d1ffdbf4438f24f2133caddd3, type: 2}
@@ -10781,7 +10781,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.45
+  m_fontSize: 44.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11181,14 +11181,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayed: 0
-  deathWaitTime: 1
-  winWaitTime: 2
-  puzzleManager: {fileID: 987666725}
   gameDoots: {fileID: 1790100281}
-  respawnPoint: {fileID: 434272255}
-  sanitybar: {fileID: 1218959635}
+  puzzleManager: {fileID: 987666725}
   sanity: {fileID: 59191520}
   player: {fileID: 2056008911}
+  respawnPoint: {fileID: 434272255}
+  deathWaitTime: 1
+  sanitybar: {fileID: 1218959635}
+  winWaitTime: 2
+  replayButton: {fileID: 772714800}
+  mainMenuButton: {fileID: 1298814210}
+  buttonDelay: 3
 --- !u!1 &1276350804
 GameObject:
   m_ObjectHideFlags: 0
@@ -16717,7 +16720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 275}
+  m_AnchoredPosition: {x: 0, y: 70}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1880409987
@@ -16740,10 +16743,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Conglaturations
+  m_text: "Because this game is indeed rich with story and lore, you realise you
+    were in the coma and everything was just a very lucid nightmare. \n\nCreeping
+    shadows lurking in the corners of your mind and chasing you around. The dreadful
+    darkness. The crushing loneliness. The fear and powerlessness. The whole \"lights
+    getting turned back on\" imagery. \r\n\r\nBut you now have regained control of
+    your body and mind. Wake up, little one. \r\n- E"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8693d56d1ffdbf4438f24f2133caddd3, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8693d56d1ffdbf4438f24f2133caddd3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b8b5c8b4a8bac6d4db665066c6e745ed, type: 2}
+  m_sharedMaterial: {fileID: -3834245724755355162, guid: b8b5c8b4a8bac6d4db665066c6e745ed, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16767,11 +16775,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.45
+  m_fontSize: 16
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 16
   m_fontSizeMax: 72
   m_fontStyle: 17
   m_HorizontalAlignment: 2

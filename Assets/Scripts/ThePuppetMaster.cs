@@ -7,27 +7,35 @@ using TMPro;
 
 public class ThePuppetMaster : MonoBehaviour
 {
-    public bool displayed;
-    private Image winPopup;
+    public bool displayed;                          // only used to disable pausing
+    private Image winPopup;                         // component that holds the rest of the popup's elements
+    
+    [Header("Death Handling")]
+    [SerializeField] GameDoots gameDoots;           // library of all the game's sounds
+    [SerializeField] PuzzleManager puzzleManager;   // mother script controlling all the puzzle jazz
+    [SerializeField] Sanity sanity;                 // script that handles the sanity mechanic
+    [SerializeField] GameObject player;             // player gameobject
+    [SerializeField] GameObject respawnPoint;       // respawning gameobject
+    private PlayerController playerController;      // script taking care of the player's controls
+    public float deathWaitTime = 1.0f;              // delay before you can move again after death
 
-    public float deathWaitTime = 1.0f;
-    public float winWaitTime = 2.0f;
+    [Header("Win Handling")]
+    [SerializeField] Image sanitybar;               // body of the sanity bar UI
+    public float winWaitTime = 2.0f;                // delay before popping up the win screen
 
-    [SerializeField] PuzzleManager puzzleManager;
-    [SerializeField] GameDoots gameDoots;
-    [SerializeField] GameObject respawnPoint;
-
-    [SerializeField] Image sanitybar;
-    [SerializeField] Sanity sanity;
-
-    [SerializeField] GameObject player;
-    private PlayerController playerController;
+    [Header("Buttons")]
+    [SerializeField] Button replayButton;           // resume button -> reloads the scene
+    [SerializeField] Button mainMenuButton;         // main menu button -> loads the main menu scene
+    public float buttonDelay = 5.0f;                // delay before the buttons appear
 
     private void Start()
     {
         winPopup = GetComponentInChildren<Image>();
         winPopup.gameObject.SetActive(false);
         displayed = false;
+
+        replayButton.gameObject.SetActive(false);
+        mainMenuButton.gameObject.SetActive(false);
 
         playerController = player.GetComponent<PlayerController>();
     }
@@ -54,6 +62,7 @@ public class ThePuppetMaster : MonoBehaviour
 
     private void WinPopup()
     {
+        StartCoroutine(ButtonsDelay());
         StopCoroutine(WinWait());
 
         playerController.isPaused = true;
@@ -76,5 +85,12 @@ public class ThePuppetMaster : MonoBehaviour
     public void ClickReplay()
     {
         SceneManager.LoadScene(1);
+    }
+
+    private IEnumerator ButtonsDelay()
+    {
+        yield return new WaitForSeconds(buttonDelay);
+        replayButton.gameObject.SetActive(true);
+        mainMenuButton.gameObject.SetActive(true);
     }
 }
