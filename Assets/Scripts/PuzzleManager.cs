@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
 {
+    public bool gameWon = false;
+
     [SerializeField] Puzzle[] puzzles;      // array of the game's puzzles
     [SerializeField] GameObject[] walls;    // array of the walls
-
-    public bool gameWon = false;
 
     public void CheckGameWon()
     {
