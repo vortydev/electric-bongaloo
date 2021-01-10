@@ -72,14 +72,14 @@ SpriteMask:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 8177471321811730583, guid: 87aaca0a643d54397ba969dab4fc8875, type: 3}
-  m_MaskAlphaCutoff: 0.2
+  m_MaskAlphaCutoff: 1
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0
   m_FrontSortingLayer: 0
   m_BackSortingLayer: 0
-  m_FrontSortingOrder: 0
+  m_FrontSortingOrder: 16
   m_BackSortingOrder: 0
-  m_IsCustomRangeActive: 0
+  m_IsCustomRangeActive: 1
   m_SpriteSortPoint: 0
 --- !u!1 &900122804
 GameObject:
@@ -107,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 900122804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 35.77286, y: 30.124514, z: 30.124514}
+  m_LocalScale: {x: 53.44823, y: 45.009033, z: 45.009033}
   m_Children: []
   m_Father: {fileID: 3399680251020392317}
   m_RootOrder: 0
@@ -173,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4022603833515526639}
   - component: {fileID: 7010279585441594255}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: SmallDarknessSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,9 +231,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingLayerID: -1406225677
+  m_SortingLayer: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_FlipX: 0
@@ -243,7 +243,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!1 &3399680251020392312
 GameObject:
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 3399680251020392316}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -369,8 +369,60 @@ MonoBehaviour:
   speed: 4
   isPaused: 0
   sanity: {fileID: 0}
+  respawnPoint: {fileID: 0}
   BigDarkSprite: {fileID: 900122806}
   SmallDarkSprite: {fileID: 7010279585441594255}
+  enemy:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bigDarkTransparent: 0
+  smallDarkTransparent: 0
+  baseBigDark: 130
+  baseSmallDark: 100
+  multiplierBigDark: 0.65
+  multiplierSmallDark: 0.6
+  gameDoots: {fileID: 0}
+  puzzleManager: {fileID: 0}
+  winManager: {fileID: 0}
 --- !u!50 &3399680251020392307
 Rigidbody2D:
   serializedVersion: 4
