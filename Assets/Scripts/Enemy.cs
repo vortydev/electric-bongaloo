@@ -5,29 +5,23 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float dmg;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    [SerializeField] Roaming roaming;
 
     public void Die()
     {
-        Destroy(gameObject, 0.1f);
+        gameObject.SetActive(false);
+        roaming.SetDestination(gameObject);
+
+    }
+
+    public void Respawn()
+    {
+        gameObject.transform.position = gameObject.transform.parent.transform.position;
+        gameObject.SetActive(true);
     }
 
     public float GetDmg()
     {
         return dmg;
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
