@@ -46,8 +46,8 @@ public class PuzzleManager : MonoBehaviour
             }
         }
 
-        puzzles[2].TurnLightBoxesOff();
-        puzzles[2].ScramblePipes();
+        puzzles[3].TurnLightBoxesOff();
+        puzzles[3].ScramblePipes();
     }
 
     public void PlayLightOn()
