@@ -52,7 +52,7 @@ public class Pipe : MonoBehaviour
                 break;
 
             case 2:
-                curPos = Random.Range(1, 5);
+                curPos = Random.Range(1, 3);
                 break;
         }
 
