@@ -2505,6 +2505,10 @@ PrefabInstance:
       propertyPath: deathManager
       value: 
       objectReference: {fileID: 1273265473}
+    - target: {fileID: 8898094562781266681, guid: ec0c05f3690186e43a1805a3fd2090ce, type: 3}
+      propertyPath: critThreshold
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 8898094562781266682, guid: ec0c05f3690186e43a1805a3fd2090ce, type: 3}
       propertyPath: m_SizeDelta.x
       value: 895
@@ -5207,7 +5211,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a89d76a3bcf6dd94d9de6b23cacbedba, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8a7320cf236d23b46ba4b783d7ba230a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -17466,11 +17470,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Because this game is indeed rich with story and lore, you realise you
-    were in the coma and everything was just a very lucid nightmare. \n\nCreeping
-    shadows lurking in the corners of your mind and chasing you around. The dreadful
-    darkness. The crushing loneliness. The fear and powerlessness. The whole \"lights
-    getting turned back on\" imagery. \r\n\r\nBut you now have regained control of
-    your body and mind. Wake up, little one. \r\n- E"
+    were in a coma and everything was just a lucid nightmare. \n\nCreeping shadows
+    lurking in the corners of your mind and chasing you around. The dreadful darkness.
+    The crushing loneliness. The fear and powerlessness. The whole \"lights getting
+    turned back on\" imagery. \r\n\r\nBut you now have regained control of your body
+    and mind. Wake up, little one. \r\n- E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8b5c8b4a8bac6d4db665066c6e745ed, type: 2}
   m_sharedMaterial: {fileID: -3834245724755355162, guid: b8b5c8b4a8bac6d4db665066c6e745ed, type: 2}
