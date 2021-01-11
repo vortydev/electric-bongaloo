@@ -7,6 +7,7 @@ public class PuzzleManager : MonoBehaviour
     public bool gameWon = false;            // bool telling the game if we won
 
     [SerializeField] GameDoots gameDoots;   // reference to the "library" of game sounds
+    [SerializeField] HubJank hubJank;
 
     [SerializeField] Puzzle[] puzzles;      // array of the game's puzzles
     [SerializeField] GameObject[] walls;    // array of the walls
@@ -23,9 +24,11 @@ public class PuzzleManager : MonoBehaviour
             {
                 puzzlesCompleted++;
                 RemoveWall(i);
+                hubJank.TurnOnHubLight(i);
             }
             else {
                 RaiseWall(i);
+                hubJank.TurnOffHubLight(i);
             }
         }
 
