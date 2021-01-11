@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
 {
-    public bool gameWon = false;            // bool telling the game if we won
-
+    [SerializeField] ThePuppetMaster gameData;
     [SerializeField] GameDoots gameDoots;   // reference to the "library" of game sounds
     [SerializeField] HubJank hubJank;
 
@@ -33,9 +32,12 @@ public class PuzzleManager : MonoBehaviour
         }
 
         if (puzzlesCompleted == puzzles.Length)
-            gameWon = true;
+            gameData.gameWon = true;
         else
-            gameWon = false;
+            gameData.gameWon = false;
+
+        if (puzzlesCompleted != gameData.puzzlesSolved)
+            gameData.UpdatePuzzleCount(puzzlesCompleted);
     }
 
     public void ScramblePuzzles()

@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     public bool isPaused = false;
 
     [SerializeField] Sanity sanity;
-    [SerializeField] GameObject respawnPoint;
     [SerializeField] SpriteRenderer BigDarkSprite;
     [SerializeField] SpriteRenderer SmallDarkSprite;
     [SerializeField] Enemy[] enemy;
@@ -26,7 +25,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float multiplierSmallDark = 0.6f;
 
     [SerializeField] GameDoots gameDoots;
-    [SerializeField] PuzzleManager puzzleManager;
     [SerializeField] ThePuppetMaster winManager;
 
     private void Start()
@@ -81,7 +79,7 @@ public class PlayerController : MonoBehaviour
         {
             sanity.isSafe = true;
 
-            if (puzzleManager.gameWon)
+            if (winManager.gameWon)
                 winManager.WinSequence();
             
             RespawnEnemies();

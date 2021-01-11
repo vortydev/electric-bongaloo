@@ -20,6 +20,7 @@ public class ThePuppetMaster : MonoBehaviour
     public float deathWaitTime = 1.0f;              // delay before you can move again after death
 
     [Header("Win Handling")]
+    public bool gameWon = false;                    // bool telling the game if we won
     [SerializeField] Image sanitybar;               // body of the sanity bar UI
     public float winWaitTime = 2.0f;                // delay before popping up the win screen
 
@@ -27,6 +28,11 @@ public class ThePuppetMaster : MonoBehaviour
     [SerializeField] Button replayButton;           // resume button -> reloads the scene
     [SerializeField] Button mainMenuButton;         // main menu button -> loads the main menu scene
     public float buttonDelay = 5.0f;                // delay before the buttons appear
+
+    [Header("Discord Activity")]
+    [SerializeField] DiscordController discord;
+    public int puzzlesSolved = 0;
+    public int timesDied = 0;
 
     private void Start()
     {
@@ -43,9 +49,11 @@ public class ThePuppetMaster : MonoBehaviour
     public void DeathSequence()
     {
         StartCoroutine(ToggleDeathBool());
+
         gameDoots.PlayPlayerDeathSound();   // plays death sound
         player.transform.position = respawnPoint.transform.position;
         puzzleManager.ScramblePuzzles();
+
         StopCoroutine(ToggleDeathBool());
     }
 
@@ -84,6 +92,10 @@ public class ThePuppetMaster : MonoBehaviour
 
     public void ClickReplay()
     {
+        puzzlesSolved = 0;
+        timesDied = 0;
+        UpdateDiscordActivity();
+
         SceneManager.LoadScene(1);
     }
 
@@ -92,5 +104,45 @@ public class ThePuppetMaster : MonoBehaviour
         yield return new WaitForSeconds(buttonDelay);
         replayButton.gameObject.SetActive(true);
         mainMenuButton.gameObject.SetActive(true);
+    }
+
+    public void UpdatePuzzleCount(int puzzleCount)
+    {
+        puzzlesSolved = puzzleCount;
+        UpdateDiscordActivity();
+    }
+
+    public void UpdateDiscordActivity()
+    {
+        string detailsString = puzzlesSolved + " puzzles solved";
+        if (puzzlesSolved == 1)
+            detailsString = "1 puzzle solved";
+
+        var activityManager = discord.discord.GetActivityManager();
+        var activity = new Discord.Activity
+        {
+            State = "This is insane!",
+            Details = detailsString,
+            //Timestamps =
+            //{
+            //    Start = 5,
+            //    End = 6,
+            //},
+            Assets =
+            {
+            	LargeImage = "wmubyg_bigmouth",
+            	LargeText = "Big Mouth Shadow",
+            },
+            //Instance = true,
+        };
+
+        activityManager.UpdateActivity(activity, (res) =>
+        {
+            if (res == Discord.Result.Ok)
+            {
+                Debug.LogError("Everything is fine!");
+            }
+            else Debug.LogError("Frick.");
+        });
     }
 }
