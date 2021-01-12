@@ -68,8 +68,16 @@ public class PlayerController : MonoBehaviour
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             sanity.LoseSanity(enemy.GetDmg());
-            gameDoots.PlayPlayerHitSound();
             enemy.Die();
+
+            bool bigMouth = false;
+            if (collision.gameObject.GetComponent<Enemy_Mouth>() != null)
+            {
+                bigMouth = true;
+            }
+
+            gameDoots.PlayPlayerSound(0);
+            gameDoots.PlayMonsterDeathSound(bigMouth);
         }
     }
 

@@ -55,7 +55,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OnPauseMenu()
     {
-        gameDoots.PlayPauseSound();
+        gameDoots.PlayPauseSound(0);
 
         player.isPaused = true;
 
@@ -68,7 +68,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OnUnpauseMenu()
     {
-        gameDoots.PlayUnpauseSound();
+        gameDoots.PlayPauseSound(1);
 
         player.isPaused = false;
 

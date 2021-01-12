@@ -7,6 +7,7 @@ public class Enemy_Mouth_Cone : MonoBehaviour
     Roaming roaming;
 
     [SerializeField] float rotationSpeed = 0.3f;
+    [SerializeField] GameDoots gameDoots;
     GameObject go;
 
     void Start()
@@ -21,6 +22,7 @@ public class Enemy_Mouth_Cone : MonoBehaviour
         if (collision.name == ("Player"))
         {            
             roaming.SetDestination(collision.gameObject);
+            gameDoots.PlayBigMouthTriggeredSound();
         }
     }
 
@@ -29,6 +31,6 @@ public class Enemy_Mouth_Cone : MonoBehaviour
     void FixedUpdate()
     {
         if(!roaming.GetIsWaiting())
-        go.transform.Rotate(0,0,rotationSpeed * Time.fixedDeltaTime);
+            go.transform.Rotate(0,0,rotationSpeed * Time.fixedDeltaTime);
     }
 }

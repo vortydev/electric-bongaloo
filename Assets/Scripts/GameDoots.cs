@@ -8,112 +8,146 @@ public class GameDoots : MonoBehaviour
     [SerializeField] Sanity sanity;
 
     // music
-    [SerializeField] AudioSource track1;
-    [SerializeField] AudioSource track2;
-    [SerializeField] AudioSource track3;
+    [SerializeField] GameObject gameSoundtrack;
+    private AudioSource[] soundTrackLayers = new AudioSource[3];
 
     // menu sfx
-    [SerializeField] AudioSource pause;
-    [SerializeField] AudioSource unpause;
+    [SerializeField] GameObject pauseSfx;
+    private AudioSource[] pauseSounds = new AudioSource[2];
 
     // light sfx
-    [SerializeField] AudioSource lightOn;
-    [SerializeField] AudioSource lightOff;
+    [SerializeField] GameObject lightSfx;
+    private AudioSource[] lightSounds = new AudioSource[2];
 
     // pipe sfx
-    [SerializeField] AudioSource pipe1;
-    [SerializeField] AudioSource pipe2;
-    [SerializeField] AudioSource pipe3;
+    [SerializeField] GameObject pipeSfx;
+    private AudioSource[] pipeSounds = new AudioSource[3];
 
     // door sfx
-    [SerializeField] AudioSource doorOpen;
-    [SerializeField] AudioSource doorClose;
+    [SerializeField] GameObject wallSfx;
+    private AudioSource[] wallSounds = new AudioSource[2];
 
     // player sfx
-    [SerializeField] AudioSource playerHit;
-    [SerializeField] AudioSource playerDeath;
+    [SerializeField] GameObject playerSfx;
+    private AudioSource[] playerSounds = new AudioSource[2];
+
+    // monster death sfx
+    [SerializeField] GameObject monsterDeathSfx;
+    private AudioSource[] monsterDeathSounds = new AudioSource[5];
+
+    // big mouth triggered sfx
+    [SerializeField] GameObject bigMouthTriggeredSfx;
+    private AudioSource[] bigMouthTriggeredSounds = new AudioSource[3];
 
     void Start()
     {
         audioController = GetComponent<AudioController>();
+
+        // loads game soundtrack layers
+        for (int i = 0; i < soundTrackLayers.Length; i++)
+        {
+            soundTrackLayers[i] = gameSoundtrack.GetComponents<AudioSource>()[i];
+        }
+
+        // loads pause sfx
+        for (int i = 0; i < pauseSounds.Length; i++)
+        {
+            pauseSounds[i] = pauseSfx.GetComponents<AudioSource>()[i];
+        }
+
+        // loads light sfx
+        for (int i = 0; i < lightSounds.Length; i++)
+        {
+            lightSounds[i] = lightSfx.GetComponents<AudioSource>()[i];
+        }
+
+        // loads pipe sfx
+        for (int i = 0; i < pipeSounds.Length; i++)
+        {
+            pipeSounds[i] = pipeSfx.GetComponents<AudioSource>()[i];
+        }
+
+        // loads wall sfx
+        for (int i = 0; i < wallSounds.Length; i++)
+        {
+            wallSounds[i] = wallSfx.GetComponents<AudioSource>()[i];
+        }
+
+        // loads player sfx
+        for (int i = 0; i < playerSounds.Length; i++)
+        {
+            playerSounds[i] = playerSfx.GetComponents<AudioSource>()[i];
+        }
+
+        // loads monster death sfx
+        for (int i = 0; i < monsterDeathSounds.Length; i++)
+        {
+            monsterDeathSounds[i] = monsterDeathSfx.GetComponents<AudioSource>()[i];
+        }
+
+        // loads big mouth triggered sfx
+        for (int i = 0; i < bigMouthTriggeredSounds.Length; i++)
+        {
+            bigMouthTriggeredSounds[i] = bigMouthTriggeredSfx.GetComponents<AudioSource>()[i];
+        }
     }
 
     private void Update()
     {
-        track1.volume = audioController.music / 10;
-        track2.volume = (audioController.music / 10) * ((sanity.maxSanity - sanity.sanity) * 0.01f);
-        track3.volume = (audioController.music / 10) * (((sanity.maxSanity - sanity.sanity) * 0.01f) - (1 - sanity.critThreshold));
+        soundTrackLayers[0].volume = audioController.music / 10;
+        soundTrackLayers[1].volume = (audioController.music / 10) * ((sanity.maxSanity - sanity.sanity) * 0.01f);
+        soundTrackLayers[2].volume = (audioController.music / 10) * (((sanity.maxSanity - sanity.sanity) * 0.01f) - (1 - sanity.critThreshold));
     }
 
-    public void PlayPauseSound()
+    public void PlayPauseSound(int ind)
     {
-        pause.volume = (audioController.sfx / 10) / 2;
-        pause.Play();
+        pauseSounds[ind].volume = (audioController.sfx / 10) / 2;
+        pauseSounds[ind].Play();
     }
 
-
-    public void PlayUnpauseSound() 
+    public void PlayLightSound(int ind)
     {
-        unpause.volume = (audioController.sfx / 10) / 2;
-        unpause.Play();
-    }
-
-    public void PlayLightOnSound()
-    {
-        lightOn.volume = (audioController.sfx / 10) / 2;
-        lightOn.Play();
-    }
-
-    public void PlayLightOffSound()
-    {
-        lightOff.volume = (audioController.sfx / 10) / 2;
-        lightOff.Play();
+        lightSounds[ind].volume = (audioController.sfx / 10) / 2;
+        lightSounds[ind].Play();
     }
 
     public void PlayPipeSound()
     {
-        int rng = Random.Range(1, 4);
+        int rng = Random.Range(0, 3);
 
-        switch (rng)
-        {
-            case 1:
-                pipe1.volume = (audioController.sfx / 10) / 2;
-                pipe1.Play();
-                break;
-
-            case 2:
-                pipe2.volume = (audioController.sfx / 10) / 2;
-                pipe2.Play();
-                break;
-
-            case 3:
-                pipe3.volume = (audioController.sfx / 10) / 2;
-                pipe3.Play();
-                break;
-        }
+        pipeSounds[rng].volume = (audioController.sfx / 10) / 2;
+        pipeSounds[rng].Play();
     }
 
-    public void PlayDoorOpenSound()
+    public void PlayWallSound(int ind)
     {
-        doorOpen.volume = (audioController.sfx / 10) / 2;
-        doorOpen.Play();
+        wallSounds[ind].volume = (audioController.sfx / 10) / 2;
+        wallSounds[ind].Play();
     }
 
-    public void PlayDoorCloseSound()
+    public void PlayPlayerSound(int ind)
     {
-        doorClose.volume = (audioController.sfx / 10);
-        doorClose.Play();
+        playerSounds[ind].volume = (audioController.sfx / 10) / 2;
+        playerSounds[ind].Play();
     }
 
-    public void PlayPlayerHitSound()
+    public void PlayMonsterDeathSound(bool bigMouth)
     {
-        playerHit.volume = (audioController.sfx / 10) / 2;
-        playerHit.Play();
+        int rng;
+        if (bigMouth)
+            rng = Random.Range(0, 5);
+        else
+            rng = Random.Range(0, 4);
+
+        monsterDeathSounds[rng].volume = (audioController.sfx / 10) / 2;
+        monsterDeathSounds[rng].Play();
     }
 
-    public void PlayPlayerDeathSound()
+    public void PlayBigMouthTriggeredSound()
     {
-        playerDeath.volume = (audioController.sfx / 10) / 2;
-        playerDeath.Play();
+        int rng = Random.Range(0, 3);
+
+        bigMouthTriggeredSounds[rng].volume = (audioController.sfx / 10) / 2;
+        bigMouthTriggeredSounds[rng].Play();
     }
 }

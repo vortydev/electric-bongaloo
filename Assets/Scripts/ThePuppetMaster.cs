@@ -50,7 +50,7 @@ public class ThePuppetMaster : MonoBehaviour
     {
         StartCoroutine(ToggleDeathBool());
 
-        gameDoots.PlayPlayerDeathSound();   // plays death sound
+        gameDoots.PlayPlayerSound(1);   // plays death sound
         player.transform.position = respawnPoint.transform.position;
         puzzleManager.ScramblePuzzles();
 

@@ -57,12 +57,12 @@ public class PuzzleManager : MonoBehaviour
 
     public void PlayLightOn()
     {
-        gameDoots.PlayLightOnSound();
+        gameDoots.PlayLightSound(0);
     }
 
     public void PlayLightOff()
     {
-        gameDoots.PlayLightOffSound();
+        gameDoots.PlayLightSound(1);
     }
 
     public void PlayPipe()
@@ -74,7 +74,7 @@ public class PuzzleManager : MonoBehaviour
     {
         if (!openedWalls[ind] && ind <= 2)
         {
-            gameDoots.PlayDoorOpenSound();
+            gameDoots.PlayWallSound(0);
             walls[ind].SetActive(false);
             openedWalls[ind] = true;
         }
@@ -84,7 +84,7 @@ public class PuzzleManager : MonoBehaviour
     {
         if (openedWalls[ind] && ind <= 2)
         {
-            gameDoots.PlayDoorCloseSound();
+            gameDoots.PlayWallSound(1);
             walls[ind].SetActive(true);
             openedWalls[ind] = false;
         }
