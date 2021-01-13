@@ -29,8 +29,8 @@ public class ThePuppetMaster : MonoBehaviour
     [SerializeField] Button mainMenuButton;         // main menu button -> loads the main menu scene
     public float buttonDelay = 5.0f;                // delay before the buttons appear
 
-    [Header("Discord Activity")]
-    [SerializeField] DiscordController discord;
+    [Header("Game Data Tracking")]
+    //[SerializeField] DiscordController discord;
     public int puzzlesSolved = 0;
     public int timesDied = 0;
 
@@ -94,7 +94,7 @@ public class ThePuppetMaster : MonoBehaviour
     {
         puzzlesSolved = 0;
         timesDied = 0;
-        UpdateDiscordActivity();
+        //UpdateDiscordActivity();
 
         SceneManager.LoadScene(1);
     }
@@ -109,40 +109,40 @@ public class ThePuppetMaster : MonoBehaviour
     public void UpdatePuzzleCount(int puzzleCount)
     {
         puzzlesSolved = puzzleCount;
-        UpdateDiscordActivity();
+        //UpdateDiscordActivity();
     }
 
-    public void UpdateDiscordActivity()
-    {
-        string detailsString = puzzlesSolved + " puzzles solved";
-        if (puzzlesSolved == 1)
-            detailsString = "1 puzzle solved";
+    //public void UpdateDiscordActivity()
+    //{
+    //    string detailsString = puzzlesSolved + " puzzles solved";
+    //    if (puzzlesSolved == 1)
+    //        detailsString = "1 puzzle solved";
 
-        var activityManager = discord.discord.GetActivityManager();
-        var activity = new Discord.Activity
-        {
-            State = "This is insane!",
-            Details = detailsString,
-            //Timestamps =
-            //{
-            //    Start = 5,
-            //    End = 6,
-            //},
-            Assets =
-            {
-            	LargeImage = "wmubyg_bigmouth",
-            	LargeText = "Big Mouth Shadow",
-            },
-            //Instance = true,
-        };
+    //    var activityManager = discord.discord.GetActivityManager();
+    //    var activity = new Discord.Activity
+    //    {
+    //        State = "This is insane!",
+    //        Details = detailsString,
+    //        //Timestamps =
+    //        //{
+    //        //    Start = 5,
+    //        //    End = 6,
+    //        //},
+    //        Assets =
+    //        {
+    //        	LargeImage = "wmubyg_bigmouth",
+    //        	LargeText = "Big Mouth Shadow",
+    //        },
+    //        //Instance = true,
+    //    };
 
-        activityManager.UpdateActivity(activity, (res) =>
-        {
-            if (res == Discord.Result.Ok)
-            {
-                Debug.LogError("Everything is fine!");
-            }
-            else Debug.LogError("Frick.");
-        });
-    }
+    //    activityManager.UpdateActivity(activity, (res) =>
+    //    {
+    //        if (res == Discord.Result.Ok)
+    //        {
+    //            Debug.LogError("Everything is fine!");
+    //        }
+    //        else Debug.LogError("Frick.");
+    //    });
+    //}
 }
